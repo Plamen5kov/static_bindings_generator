@@ -1,6 +1,6 @@
 package com.tns.gen.android.content;
 
-public class DialogInterface_OnClickListener implements android.content.DialogInterface.OnClickListener, com.tns.NativeScriptHashCodeProvider {
+public class DialogInterface_OnClickListener_f__tns_modules_ui_dialogs_dialogs_l49_c59__ implements android.content.DialogInterface.OnClickListener, com.tns.NativeScriptHashCodeProvider {
 	public void onClick(android.content.DialogInterface param_0, int param_1) {
 		java.lang.Object[] params = new Object[2];
 		params[0] = param_0;

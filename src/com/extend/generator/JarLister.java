@@ -10,8 +10,6 @@ import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
-import java.net.URL;
-import java.net.URLClassLoader;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.IntBuffer;
@@ -35,6 +33,7 @@ import com.extend.generator.TreeNode.MethodInfo;
 public class JarLister {
 	private static HashMap<String, HashSet<String>> overridenClasses = new HashMap<String, HashSet<String>>();
 	private static NSClassLoader loader;
+	private static String LOCATION_SEPARATOR = "_f__";
 
 	private static class MethodNameComparator implements Comparator<Method> {
 		@Override
@@ -292,15 +291,15 @@ public class JarLister {
 		}
 
 		for (String key : overridenClasses.keySet()) {
-			if (key.equals(clazz.getCanonicalName())) {
-
+			String currentCannonicalName = key.substring(0, key.indexOf(LOCATION_SEPARATOR));
+			if (currentCannonicalName.equals(clazz.getCanonicalName())) {
 				String fullClassName = getFullClassName(clazz, key);
 				fos = new FileOutputStream(baseDir + path + fullClassName + ".java");
 				out = new OutputStreamWriter(fos, "UTF-8");
 
 				out.write("package " + packagePrefix + classPackage.getName() + ";\n\n");
 
-				boolean hasInitOverride = overridenClasses.get(key).contains("init");
+				boolean hasInitOverride = ((HashSet) overridenClasses.get(key)).contains("init");
 				generateJavaBindingsRec(clazz, out, 0, key, hasInitOverride);
 
 				out.flush();
@@ -309,16 +308,24 @@ public class JarLister {
 		}
 	}
 
+	private static String getLocationOfClass(String key) {
+		String result = null;
+		String locationSeparator = LOCATION_SEPARATOR;
+		String[] fileParts = key.split(locationSeparator);
+		result = locationSeparator + fileParts[1];
+
+		return result;
+	}
+
 	private static String getFullClassName(Class<?> clazz, String key) {
 		Class<?> enclosingClassName = clazz.getEnclosingClass();
 
-		String fullClassName = clazz.getSimpleName(); // original implementation
-
+		String fullClassName = clazz.getSimpleName();
 		if (enclosingClassName != null) {
 			fullClassName = enclosingClassName.getSimpleName() + "_" + clazz.getSimpleName();
 		}
-
-		return fullClassName;
+		String fileLocation = getLocationOfClass(key);
+		return fullClassName + fileLocation;
 	}
 
 	private static boolean checkForPublicSignatureTypes(Class<?>[] params) {
@@ -1032,15 +1039,13 @@ public class JarLister {
 		out.write(tabs + "\t}\n\n");
 	}
 
-	private static void writeSetKimeraOverrides(OutputStreamWriter out, int level, Class<?> clazz, int methodGroupIdx,	List<String> methodGroups) throws Exception {
+	private static void writeSetKimeraOverrides(OutputStreamWriter out, int level, Class<?> clazz, int methodGroupIdx,
+			List<String> methodGroups) throws Exception {
 		String tabs = getTabsForLevel(level);
 
-		if (isAndroidApplicationClass(clazz))
-		{
+		if (isAndroidApplicationClass(clazz)) {
 			out.write(tabs + "\tprivate boolean __initialized = true;\n");
-		}
-		else
-		{
+		} else {
 			out.write(tabs + "\tprivate boolean __initialized;\n");
 		}
 	}

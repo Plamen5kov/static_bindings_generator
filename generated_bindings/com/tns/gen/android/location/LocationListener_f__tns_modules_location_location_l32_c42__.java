@@ -1,6 +1,6 @@
 package com.tns.gen.android.location;
 
-public class LocationListener implements android.location.LocationListener, com.tns.NativeScriptHashCodeProvider {
+public class LocationListener_f__tns_modules_location_location_l32_c42__ implements android.location.LocationListener, com.tns.NativeScriptHashCodeProvider {
 	public void onLocationChanged(android.location.Location param_0) {
 		java.lang.Object[] params = new Object[1];
 		params[0] = param_0;

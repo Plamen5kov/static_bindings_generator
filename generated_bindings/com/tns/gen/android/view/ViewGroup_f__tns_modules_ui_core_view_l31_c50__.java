@@ -1,40 +1,28 @@
-package com.tns.gen.android.widget;
+package com.tns.gen.android.view;
 
-public class DatePicker extends android.widget.DatePicker implements com.tns.NativeScriptHashCodeProvider {
-	public DatePicker(android.content.Context param_0, android.util.AttributeSet param_1, int param_2) {
+public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeScriptHashCodeProvider {
+	public ViewGroup_f__tns_modules_ui_core_view_l31_c50__(android.content.Context param_0, android.util.AttributeSet param_1, int param_2) {
 		super(param_0, param_1, param_2);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
-	public DatePicker(android.content.Context param_0, android.util.AttributeSet param_1) {
+	public ViewGroup_f__tns_modules_ui_core_view_l31_c50__(android.content.Context param_0, android.util.AttributeSet param_1) {
 		super(param_0, param_1);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
-	public DatePicker(android.content.Context param_0) {
+	public ViewGroup_f__tns_modules_ui_core_view_l31_c50__(android.content.Context param_0) {
 		super(param_0);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
 	public void addChildrenForAccessibility(java.util.ArrayList param_0) {
@@ -109,15 +97,24 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "addTouchables", params);
 	}
 
-	public void addView(android.view.View param_0, int param_1, android.view.ViewGroup.LayoutParams param_2) {
+	public void addView(android.view.View param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[3];
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "addView", params);
+	}
+
+	public void addView(android.view.View param_0, int param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
 			params[0] = param_0;
 			params[1] = param_1;
-			params[2] = param_2;
 			com.tns.Platform.callJSMethod(this, "addView", params);
 	}
 
@@ -133,28 +130,19 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "addView", params);
 	}
 
-	public void addView(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1) {
+	public void addView(android.view.View param_0, int param_1, android.view.ViewGroup.LayoutParams param_2) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[2];
+			java.lang.Object[] params = new Object[3];
 			params[0] = param_0;
 			params[1] = param_1;
+			params[2] = param_2;
 			com.tns.Platform.callJSMethod(this, "addView", params);
 	}
 
-	public void addView(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "addView", params);
-	}
-
-	public void addView(android.view.View param_0, int param_1) {
+	public void addView(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -234,6 +222,16 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "attachViewToParent", params);
 	}
 
+	protected boolean awakenScrollBars(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "awakenScrollBars", params);
+	}
+
 	protected boolean awakenScrollBars(int param_0, boolean param_1) {
 		if (!__initialized) {
 			__initialized = true;
@@ -251,16 +249,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "awakenScrollBars", params);
-	}
-
-	protected boolean awakenScrollBars(int param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "awakenScrollBars", params);
 	}
 
@@ -998,6 +986,25 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Boolean)com.tns.Platform.callJSMethod(this, "gatherTransparentRegion", params);
 	}
 
+	protected android.view.ViewGroup.LayoutParams generateDefaultLayoutParams() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.view.ViewGroup.LayoutParams)com.tns.Platform.callJSMethod(this, "generateDefaultLayoutParams", params);
+	}
+
+	public android.view.ViewGroup.LayoutParams generateLayoutParams(android.util.AttributeSet param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			return (android.view.ViewGroup.LayoutParams)com.tns.Platform.callJSMethod(this, "generateLayoutParams", params);
+	}
+
 	protected android.view.ViewGroup.LayoutParams generateLayoutParams(android.view.ViewGroup.LayoutParams param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -1080,24 +1087,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Integer)com.tns.Platform.callJSMethod(this, "getBottomPaddingOffset", params);
 	}
 
-	public android.widget.CalendarView getCalendarView() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (android.widget.CalendarView)com.tns.Platform.callJSMethod(this, "getCalendarView", params);
-	}
-
-	public boolean getCalendarViewShown() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "getCalendarViewShown", params);
-	}
-
 	public float getCameraDistance() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1160,15 +1149,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Boolean)com.tns.Platform.callJSMethod(this, "getChildVisibleRect", params);
 	}
 
-	public boolean getConsiderGoneChildrenWhenMeasuring() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "getConsiderGoneChildrenWhenMeasuring", params);
-	}
-
 	public java.lang.CharSequence getContentDescription() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1185,15 +1165,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 		}
 			java.lang.Object[] params = null;
 			return (android.view.ContextMenu.ContextMenuInfo)com.tns.Platform.callJSMethod(this, "getContextMenuInfo", params);
-	}
-
-	public int getDayOfMonth() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Integer)com.tns.Platform.callJSMethod(this, "getDayOfMonth", params);
 	}
 
 	public int getDescendantFocusability() {
@@ -1315,24 +1286,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "getFocusedRect", params);
-	}
-
-	public android.graphics.drawable.Drawable getForeground() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (android.graphics.drawable.Drawable)com.tns.Platform.callJSMethod(this, "getForeground", params);
-	}
-
-	public int getForegroundGravity() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Integer)com.tns.Platform.callJSMethod(this, "getForegroundGravity", params);
 	}
 
 	public boolean getGlobalVisibleRect(android.graphics.Rect param_0, android.graphics.Point param_1) {
@@ -1529,33 +1482,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (android.graphics.Matrix)com.tns.Platform.callJSMethod(this, "getMatrix", params);
 	}
 
-	public long getMaxDate() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Long)com.tns.Platform.callJSMethod(this, "getMaxDate", params);
-	}
-
-	public boolean getMeasureAllChildren() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "getMeasureAllChildren", params);
-	}
-
-	public long getMinDate() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Long)com.tns.Platform.callJSMethod(this, "getMinDate", params);
-	}
-
 	public int getMinimumHeight() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1572,15 +1498,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 		}
 			java.lang.Object[] params = null;
 			return (Integer)com.tns.Platform.callJSMethod(this, "getMinimumWidth", params);
-	}
-
-	public int getMonth() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Integer)com.tns.Platform.callJSMethod(this, "getMonth", params);
 	}
 
 	public int getNextFocusDownId() {
@@ -1862,15 +1779,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Integer)com.tns.Platform.callJSMethod(this, "getSolidColor", params);
 	}
 
-	public boolean getSpinnersShown() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "getSpinnersShown", params);
-	}
-
 	protected int getSuggestedMinimumHeight() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1898,15 +1806,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Integer)com.tns.Platform.callJSMethod(this, "getSystemUiVisibility", params);
 	}
 
-	public java.lang.Object getTag() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (java.lang.Object)com.tns.Platform.callJSMethod(this, "getTag", params);
-	}
-
 	public java.lang.Object getTag(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -1914,6 +1813,15 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
+			return (java.lang.Object)com.tns.Platform.callJSMethod(this, "getTag", params);
+	}
+
+	public java.lang.Object getTag() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
 			return (java.lang.Object)com.tns.Platform.callJSMethod(this, "getTag", params);
 	}
 
@@ -2098,15 +2006,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Float)com.tns.Platform.callJSMethod(this, "getY", params);
 	}
 
-	public int getYear() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Integer)com.tns.Platform.callJSMethod(this, "getYear", params);
-	}
-
 	public boolean hasFocus() {
 		if (!__initialized) {
 			__initialized = true;
@@ -2180,19 +2079,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Integer)com.tns.Platform.callJSMethod(this, "indexOfChild", params);
 	}
 
-	public void init(int param_0, int param_1, int param_2, android.widget.DatePicker.OnDateChangedListener param_3) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[4];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			params[3] = param_3;
-			com.tns.Platform.callJSMethod(this, "init", false, params);
-	}
-
 	protected void initializeFadingEdge(android.content.res.TypedArray param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -2213,6 +2099,16 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "initializeScrollbars", params);
 	}
 
+	public void invalidate(android.graphics.Rect param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "invalidate", params);
+	}
+
 	public void invalidate(int param_0, int param_1, int param_2, int param_3) {
 		if (!__initialized) {
 			__initialized = true;
@@ -2223,16 +2119,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			params[1] = param_1;
 			params[2] = param_2;
 			params[3] = param_3;
-			com.tns.Platform.callJSMethod(this, "invalidate", params);
-	}
-
-	public void invalidate(android.graphics.Rect param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "invalidate", params);
 	}
 
@@ -2931,17 +2817,13 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 	}
 
 	protected void onLayout(boolean param_0, int param_1, int param_2, int param_3, int param_4) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[5];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			params[3] = param_3;
-			params[4] = param_4;
-			com.tns.Platform.callJSMethod(this, "onLayout", params);
+		java.lang.Object[] params = new Object[5];
+		params[0] = param_0;
+		params[1] = param_1;
+		params[2] = param_2;
+		params[3] = param_3;
+		params[4] = param_4;
+		com.tns.Platform.callJSMethod(this, "onLayout", params);
 	}
 
 	protected void onMeasure(int param_0, int param_1) {
@@ -3183,16 +3065,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Boolean)com.tns.Platform.callJSMethod(this, "performClick", params);
 	}
 
-	public boolean performHapticFeedback(int param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "performHapticFeedback", params);
-	}
-
 	public boolean performHapticFeedback(int param_0, int param_1) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3201,6 +3073,16 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			java.lang.Object[] params = new Object[2];
 			params[0] = param_0;
 			params[1] = param_1;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "performHapticFeedback", params);
+	}
+
+	public boolean performHapticFeedback(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "performHapticFeedback", params);
 	}
 
@@ -3244,15 +3126,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			return (Boolean)com.tns.Platform.callJSMethod(this, "postDelayed", params);
 	}
 
-	public void postInvalidate() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "postInvalidate", params);
-	}
-
 	public void postInvalidate(int param_0, int param_1, int param_2, int param_3) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3266,14 +3139,13 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "postInvalidate", params);
 	}
 
-	public void postInvalidateDelayed(long param_0) {
+	public void postInvalidate() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
+			java.lang.Object[] params = null;
+			com.tns.Platform.callJSMethod(this, "postInvalidate", params);
 	}
 
 	public void postInvalidateDelayed(long param_0, int param_1, int param_2, int param_3, int param_4) {
@@ -3290,13 +3162,14 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
 	}
 
-	public void postInvalidateOnAnimation() {
+	public void postInvalidateDelayed(long param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "postInvalidateOnAnimation", params);
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
 	}
 
 	public void postInvalidateOnAnimation(int param_0, int param_1, int param_2, int param_3) {
@@ -3309,6 +3182,15 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			params[1] = param_1;
 			params[2] = param_2;
 			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "postInvalidateOnAnimation", params);
+	}
+
+	public void postInvalidateOnAnimation() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
 			com.tns.Platform.callJSMethod(this, "postInvalidateOnAnimation", params);
 	}
 
@@ -3525,16 +3407,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "requestLayout", params);
 	}
 
-	public boolean requestRectangleOnScreen(android.graphics.Rect param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "requestRectangleOnScreen", params);
-	}
-
 	public boolean requestRectangleOnScreen(android.graphics.Rect param_0, boolean param_1) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3543,6 +3415,16 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			java.lang.Object[] params = new Object[2];
 			params[0] = param_0;
 			params[1] = param_1;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "requestRectangleOnScreen", params);
+	}
+
+	public boolean requestRectangleOnScreen(android.graphics.Rect param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "requestRectangleOnScreen", params);
 	}
 
@@ -3760,16 +3642,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "setBackgroundResource", params);
 	}
 
-	public void setCalendarViewShown(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setCalendarViewShown", params);
-	}
-
 	public void setCameraDistance(float param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3960,26 +3832,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "setFocusableInTouchMode", params);
 	}
 
-	public void setForeground(android.graphics.drawable.Drawable param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setForeground", params);
-	}
-
-	public void setForegroundGravity(int param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setForegroundGravity", params);
-	}
-
 	public void setHapticFeedbackEnabled(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4149,36 +4001,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setLongClickable", params);
-	}
-
-	public void setMaxDate(long param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setMaxDate", params);
-	}
-
-	public void setMeasureAllChildren(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setMeasureAllChildren", params);
-	}
-
-	public void setMinDate(long param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setMinDate", params);
 	}
 
 	public void setMinimumHeight(int param_0) {
@@ -4617,16 +4439,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			com.tns.Platform.callJSMethod(this, "setSoundEffectsEnabled", params);
 	}
 
-	public void setSpinnersShown(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setSpinnersShown", params);
-	}
-
 	protected void setStaticTransformationsEnabled(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4904,18 +4716,6 @@ public class DatePicker extends android.widget.DatePicker implements com.tns.Nat
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "unscheduleDrawable", params);
-	}
-
-	public void updateDate(int param_0, int param_1, int param_2) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			com.tns.Platform.callJSMethod(this, "updateDate", params);
 	}
 
 	public void updateViewLayout(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1) {

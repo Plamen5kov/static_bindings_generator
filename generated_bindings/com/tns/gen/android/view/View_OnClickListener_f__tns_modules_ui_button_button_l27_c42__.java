@@ -1,6 +1,6 @@
 package com.tns.gen.android.view;
 
-public class View_OnClickListener implements android.view.View.OnClickListener, com.tns.NativeScriptHashCodeProvider {
+public class View_OnClickListener_f__tns_modules_ui_button_button_l27_c42__ implements android.view.View.OnClickListener, com.tns.NativeScriptHashCodeProvider {
 	public void onClick(android.view.View param_0) {
 		java.lang.Object[] params = new Object[1];
 		params[0] = param_0;

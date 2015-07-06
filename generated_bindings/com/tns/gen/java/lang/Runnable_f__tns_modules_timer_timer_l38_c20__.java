@@ -1,6 +1,6 @@
 package com.tns.gen.java.lang;
 
-public class Runnable implements java.lang.Runnable, com.tns.NativeScriptHashCodeProvider {
+public class Runnable_f__tns_modules_timer_timer_l38_c20__ implements java.lang.Runnable, com.tns.NativeScriptHashCodeProvider {
 	public void run() {
 		java.lang.Object[] params = null;
 		com.tns.Platform.callJSMethod(this, "run", params);
