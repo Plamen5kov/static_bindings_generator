@@ -33,7 +33,7 @@ import com.extend.generator.TreeNode.MethodInfo;
 public class JarLister {
 	private static HashMap<String, HashSet<String>> overridenClasses = new HashMap<String, HashSet<String>>();
 	private static NSClassLoader loader;
-	private static String LOCATION_SEPARATOR = "_f__";
+	private static String LOCATION_SEPARATOR = "_f";
 
 	private static class MethodNameComparator implements Comparator<Method> {
 		@Override
@@ -587,10 +587,10 @@ public class JarLister {
 
 				if (!hasPublicCtors) {
 					if (Modifier.isStatic(clazzModifiers)) {
-						out.write(tabs + "public static class " + clazz.getSimpleName() + " extends "
+						out.write(tabs + "public static class " + fullClassName + " extends "
 								+ clazz.getCanonicalName() + " implements com.tns.NativeScriptHashCodeProvider {\n");
 					} else {
-						out.write(tabs + "public class " + clazz.getSimpleName() + " extends "
+						out.write(tabs + "public class " + fullClassName + " extends "
 								+ clazz.getCanonicalName() + " implements com.tns.NativeScriptHashCodeProvider {\n");
 					}
 					hasPublicCtors = true;
@@ -679,7 +679,7 @@ public class JarLister {
 				if (clazz.isInterface()) {
 					writeInterfaceMethodImplementation(out, level, m, retType);
 				} else {
-					if (isAbstract) {
+					if (isAbstract && clazz.isInterface()) {
 						writeAbstractMethodImplementation(out, level, m, retType);
 					} else {
 						writeMethodBody(out, level, clazz, m, retType, methodGroupIdx);
