@@ -416,8 +416,7 @@ public class JarLister {
 						out.write(tabs + "public static class " + fullClassName + " extends "
 								+ clazz.getCanonicalName() + " implements com.tns.NativeScriptHashCodeProvider {\n");
 					} else {
-						out.write(tabs + "public class " + fullClassName + " extends " + clazz.getCanonicalName()
-								+ " implements com.tns.NativeScriptHashCodeProvider {\n");
+						out.write(tabs + "public class " + fullClassName + " extends " + clazz.getCanonicalName() + " implements com.tns.NativeScriptHashCodeProvider {\n");
 					}
 					hasPublicCtors = true;
 

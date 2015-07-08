@@ -1,28 +1,40 @@
-package com.tns.gen.android.view;
+package com.tns.gen.android.widget;
 
-public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeScriptHashCodeProvider {
-	public ViewGroup_ftns_modules_ui_core_view_l31_c50__(android.content.Context param_0, android.util.AttributeSet param_1, int param_2) {
+public class Button_ftests_testsWithContext_l21_c41__ extends android.widget.Button implements com.tns.NativeScriptHashCodeProvider {
+	public Button_ftests_testsWithContext_l21_c41__(android.content.Context param_0, android.util.AttributeSet param_1, int param_2) {
 		super(param_0, param_1, param_2);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
+			java.lang.Object[] params = new Object[3];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
-	public ViewGroup_ftns_modules_ui_core_view_l31_c50__(android.content.Context param_0, android.util.AttributeSet param_1) {
+	public Button_ftests_testsWithContext_l21_c41__(android.content.Context param_0, android.util.AttributeSet param_1) {
 		super(param_0, param_1);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
-	public ViewGroup_ftns_modules_ui_core_view_l31_c50__(android.content.Context param_0) {
+	public Button_ftests_testsWithContext_l21_c41__(android.content.Context param_0) {
 		super(param_0);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
 	public void addChildrenForAccessibility(java.util.ArrayList param_0) {
@@ -35,6 +47,17 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "addChildrenForAccessibility", params);
 	}
 
+	public void addFocusables(java.util.ArrayList param_0, int param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "addFocusables", params);
+	}
+
 	public void addFocusables(java.util.ArrayList param_0, int param_1, int param_2) {
 		if (!__initialized) {
 			__initialized = true;
@@ -44,17 +67,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			params[0] = param_0;
 			params[1] = param_1;
 			params[2] = param_2;
-			com.tns.Platform.callJSMethod(this, "addFocusables", params);
-	}
-
-	public void addFocusables(java.util.ArrayList param_0, int param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
 			com.tns.Platform.callJSMethod(this, "addFocusables", params);
 	}
 
@@ -78,13 +90,14 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "addOnLayoutChangeListener", params);
 	}
 
-	public boolean addStatesFromChildren() {
+	public void addTextChangedListener(android.text.TextWatcher param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "addStatesFromChildren", params);
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "addTextChangedListener", params);
 	}
 
 	public void addTouchables(java.util.ArrayList param_0) {
@@ -95,87 +108,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "addTouchables", params);
-	}
-
-	public void addView(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "addView", params);
-	}
-
-	public void addView(android.view.View param_0, int param_1, android.view.ViewGroup.LayoutParams param_2) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			com.tns.Platform.callJSMethod(this, "addView", params);
-	}
-
-	public void addView(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "addView", params);
-	}
-
-	public void addView(android.view.View param_0, int param_1, int param_2) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			com.tns.Platform.callJSMethod(this, "addView", params);
-	}
-
-	public void addView(android.view.View param_0, int param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "addView", params);
-	}
-
-	protected boolean addViewInLayout(android.view.View param_0, int param_1, android.view.ViewGroup.LayoutParams param_2) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "addViewInLayout", params);
-	}
-
-	protected boolean addViewInLayout(android.view.View param_0, int param_1, android.view.ViewGroup.LayoutParams param_2, boolean param_3) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[4];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			params[3] = param_3;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "addViewInLayout", params);
 	}
 
 	public android.view.ViewPropertyAnimator animate() {
@@ -197,20 +129,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "announceForAccessibility", params);
 	}
 
-	protected void attachLayoutAnimationParameters(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1, int param_2, int param_3) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[4];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			params[3] = param_3;
-			com.tns.Platform.callJSMethod(this, "attachLayoutAnimationParameters", params);
-	}
-
-	protected void attachViewToParent(android.view.View param_0, int param_1, android.view.ViewGroup.LayoutParams param_2) {
+	public void append(java.lang.CharSequence param_0, int param_1, int param_2) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -219,7 +138,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			params[0] = param_0;
 			params[1] = param_1;
 			params[2] = param_2;
-			com.tns.Platform.callJSMethod(this, "attachViewToParent", params);
+			com.tns.Platform.callJSMethod(this, "append", params);
 	}
 
 	protected boolean awakenScrollBars(int param_0, boolean param_1) {
@@ -252,14 +171,23 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "awakenScrollBars", params);
 	}
 
-	public void bringChildToFront(android.view.View param_0) {
+	public void beginBatchEdit() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			com.tns.Platform.callJSMethod(this, "beginBatchEdit", params);
+	}
+
+	public boolean bringPointIntoView(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "bringChildToFront", params);
+			return (Boolean)com.tns.Platform.callJSMethod(this, "bringPointIntoView", params);
 	}
 
 	public void bringToFront() {
@@ -271,15 +199,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "bringToFront", params);
 	}
 
-	public void buildDrawingCache() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "buildDrawingCache", params);
-	}
-
 	public void buildDrawingCache(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -287,6 +206,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "buildDrawingCache", params);
+	}
+
+	public void buildDrawingCache() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
 			com.tns.Platform.callJSMethod(this, "buildDrawingCache", params);
 	}
 
@@ -306,15 +234,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "callOnClick", params);
-	}
-
-	protected boolean canAnimate() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "canAnimate", params);
 	}
 
 	public boolean canScrollHorizontally(int param_0) {
@@ -356,36 +275,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "checkInputConnectionProxy", params);
 	}
 
-	protected boolean checkLayoutParams(android.view.ViewGroup.LayoutParams param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "checkLayoutParams", params);
-	}
-
-	public void childDrawableStateChanged(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "childDrawableStateChanged", params);
-	}
-
-	protected void cleanupLayoutState(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "cleanupLayoutState", params);
-	}
-
 	public void clearAnimation() {
 		if (!__initialized) {
 			__initialized = true;
@@ -395,23 +284,13 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "clearAnimation", params);
 	}
 
-	public void clearChildFocus(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "clearChildFocus", params);
-	}
-
-	public void clearDisappearingChildren() {
+	public void clearComposingText() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "clearDisappearingChildren", params);
+			com.tns.Platform.callJSMethod(this, "clearComposingText", params);
 	}
 
 	public void clearFocus() {
@@ -514,7 +393,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "createContextMenu", params);
 	}
 
-	protected void debug(int param_0) {
+	public void debug(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -533,44 +412,13 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "destroyDrawingCache", params);
 	}
 
-	protected void detachAllViewsFromParent() {
+	public boolean didTouchFocusSelect() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "detachAllViewsFromParent", params);
-	}
-
-	protected void detachViewFromParent(int param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "detachViewFromParent", params);
-	}
-
-	protected void detachViewFromParent(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "detachViewFromParent", params);
-	}
-
-	protected void detachViewsFromParent(int param_0, int param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "detachViewsFromParent", params);
+			return (Boolean)com.tns.Platform.callJSMethod(this, "didTouchFocusSelect", params);
 	}
 
 	public void dispatchConfigurationChanged(android.content.res.Configuration param_0) {
@@ -611,16 +459,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "dispatchDraw", params);
-	}
-
-	protected void dispatchFreezeSelfOnly(android.util.SparseArray param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "dispatchFreezeSelfOnly", params);
 	}
 
 	protected boolean dispatchGenericFocusedEvent(android.view.MotionEvent param_0) {
@@ -723,7 +561,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "dispatchSaveInstanceState", params);
 	}
 
-	public void dispatchSetActivated(boolean param_0) {
+	protected void dispatchSetActivated(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -743,7 +581,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "dispatchSetPressed", params);
 	}
 
-	public void dispatchSetSelected(boolean param_0) {
+	protected void dispatchSetSelected(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -761,16 +599,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "dispatchSystemUiVisibilityChanged", params);
-	}
-
-	protected void dispatchThawSelfOnly(android.util.SparseArray param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "dispatchThawSelfOnly", params);
 	}
 
 	public boolean dispatchTouchEvent(android.view.MotionEvent param_0) {
@@ -855,18 +683,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "draw", params);
 	}
 
-	protected boolean drawChild(android.graphics.Canvas param_0, android.view.View param_1, long param_2) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "drawChild", params);
-	}
-
 	protected void drawableStateChanged() {
 		if (!__initialized) {
 			__initialized = true;
@@ -876,14 +692,13 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "drawableStateChanged", params);
 	}
 
-	public void endViewTransition(android.view.View param_0) {
+	public void endBatchEdit() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "endViewTransition", params);
+			java.lang.Object[] params = null;
+			com.tns.Platform.callJSMethod(this, "endBatchEdit", params);
 	}
 
 	public boolean equals(java.lang.Object param_0) {
@@ -894,6 +709,17 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "equals", params);
+	}
+
+	public boolean extractText(android.view.inputmethod.ExtractedTextRequest param_0, android.view.inputmethod.ExtractedText param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "extractText", params);
 	}
 
 	protected void finalize() throws java.lang.Throwable {
@@ -936,17 +762,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "fitSystemWindows", params);
 	}
 
-	public android.view.View focusSearch(android.view.View param_0, int param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			return (android.view.View)com.tns.Platform.callJSMethod(this, "focusSearch", params);
-	}
-
 	public android.view.View focusSearch(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -957,16 +772,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (android.view.View)com.tns.Platform.callJSMethod(this, "focusSearch", params);
 	}
 
-	public void focusableViewAvailable(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "focusableViewAvailable", params);
-	}
-
 	public void forceLayout() {
 		if (!__initialized) {
 			__initialized = true;
@@ -974,45 +779,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			com.tns.Platform.callJSMethod(this, "forceLayout", params);
-	}
-
-	public boolean gatherTransparentRegion(android.graphics.Region param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "gatherTransparentRegion", params);
-	}
-
-	protected android.view.ViewGroup.LayoutParams generateDefaultLayoutParams() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (android.view.ViewGroup.LayoutParams)com.tns.Platform.callJSMethod(this, "generateDefaultLayoutParams", params);
-	}
-
-	protected android.view.ViewGroup.LayoutParams generateLayoutParams(android.view.ViewGroup.LayoutParams param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (android.view.ViewGroup.LayoutParams)com.tns.Platform.callJSMethod(this, "generateLayoutParams", params);
-	}
-
-	public android.view.ViewGroup.LayoutParams generateLayoutParams(android.util.AttributeSet param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (android.view.ViewGroup.LayoutParams)com.tns.Platform.callJSMethod(this, "generateLayoutParams", params);
 	}
 
 	public android.view.accessibility.AccessibilityNodeProvider getAccessibilityNodeProvider() {
@@ -1096,57 +862,85 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Float)com.tns.Platform.callJSMethod(this, "getCameraDistance", params);
 	}
 
-	public android.view.View getChildAt(int param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (android.view.View)com.tns.Platform.callJSMethod(this, "getChildAt", params);
-	}
-
-	public int getChildCount() {
+	public int getCompoundDrawablePadding() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = null;
-			return (Integer)com.tns.Platform.callJSMethod(this, "getChildCount", params);
+			return (Integer)com.tns.Platform.callJSMethod(this, "getCompoundDrawablePadding", params);
 	}
 
-	protected int getChildDrawingOrder(int param_0, int param_1) {
+	public android.graphics.drawable.Drawable[] getCompoundDrawables() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			return (Integer)com.tns.Platform.callJSMethod(this, "getChildDrawingOrder", params);
+			java.lang.Object[] params = null;
+			return (android.graphics.drawable.Drawable[])com.tns.Platform.callJSMethod(this, "getCompoundDrawables", params);
 	}
 
-	protected boolean getChildStaticTransformation(android.view.View param_0, android.view.animation.Transformation param_1) {
+	public android.graphics.drawable.Drawable[] getCompoundDrawablesRelative() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "getChildStaticTransformation", params);
+			java.lang.Object[] params = null;
+			return (android.graphics.drawable.Drawable[])com.tns.Platform.callJSMethod(this, "getCompoundDrawablesRelative", params);
 	}
 
-	public boolean getChildVisibleRect(android.view.View param_0, android.graphics.Rect param_1, android.graphics.Point param_2) {
+	public int getCompoundPaddingBottom() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "getChildVisibleRect", params);
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getCompoundPaddingBottom", params);
+	}
+
+	public int getCompoundPaddingEnd() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getCompoundPaddingEnd", params);
+	}
+
+	public int getCompoundPaddingLeft() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getCompoundPaddingLeft", params);
+	}
+
+	public int getCompoundPaddingRight() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getCompoundPaddingRight", params);
+	}
+
+	public int getCompoundPaddingStart() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getCompoundPaddingStart", params);
+	}
+
+	public int getCompoundPaddingTop() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getCompoundPaddingTop", params);
 	}
 
 	public java.lang.CharSequence getContentDescription() {
@@ -1167,13 +961,31 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (android.view.ContextMenu.ContextMenuInfo)com.tns.Platform.callJSMethod(this, "getContextMenuInfo", params);
 	}
 
-	public int getDescendantFocusability() {
+	public android.view.ActionMode.Callback getCustomSelectionActionModeCallback() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = null;
-			return (Integer)com.tns.Platform.callJSMethod(this, "getDescendantFocusability", params);
+			return (android.view.ActionMode.Callback)com.tns.Platform.callJSMethod(this, "getCustomSelectionActionModeCallback", params);
+	}
+
+	protected boolean getDefaultEditable() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "getDefaultEditable", params);
+	}
+
+	protected android.text.method.MovementMethod getDefaultMovementMethod() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.text.method.MovementMethod)com.tns.Platform.callJSMethod(this, "getDefaultMovementMethod", params);
 	}
 
 	public android.view.Display getDisplay() {
@@ -1185,6 +997,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (android.view.Display)com.tns.Platform.callJSMethod(this, "getDisplay", params);
 	}
 
+	public android.graphics.Bitmap getDrawingCache() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.graphics.Bitmap)com.tns.Platform.callJSMethod(this, "getDrawingCache", params);
+	}
+
 	public android.graphics.Bitmap getDrawingCache(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -1192,15 +1013,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			return (android.graphics.Bitmap)com.tns.Platform.callJSMethod(this, "getDrawingCache", params);
-	}
-
-	public android.graphics.Bitmap getDrawingCache() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
 			return (android.graphics.Bitmap)com.tns.Platform.callJSMethod(this, "getDrawingCache", params);
 	}
 
@@ -1241,6 +1053,51 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Long)com.tns.Platform.callJSMethod(this, "getDrawingTime", params);
 	}
 
+	public android.text.Editable getEditableText() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.text.Editable)com.tns.Platform.callJSMethod(this, "getEditableText", params);
+	}
+
+	public android.text.TextUtils.TruncateAt getEllipsize() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.text.TextUtils.TruncateAt)com.tns.Platform.callJSMethod(this, "getEllipsize", params);
+	}
+
+	public java.lang.CharSequence getError() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (java.lang.CharSequence)com.tns.Platform.callJSMethod(this, "getError", params);
+	}
+
+	public int getExtendedPaddingBottom() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getExtendedPaddingBottom", params);
+	}
+
+	public int getExtendedPaddingTop() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getExtendedPaddingTop", params);
+	}
+
 	public boolean getFilterTouchesWhenObscured() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1248,6 +1105,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "getFilterTouchesWhenObscured", params);
+	}
+
+	public android.text.InputFilter[] getFilters() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.text.InputFilter[])com.tns.Platform.callJSMethod(this, "getFilters", params);
 	}
 
 	public boolean getFitsSystemWindows() {
@@ -1269,15 +1135,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (java.util.ArrayList)com.tns.Platform.callJSMethod(this, "getFocusables", params);
 	}
 
-	public android.view.View getFocusedChild() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (android.view.View)com.tns.Platform.callJSMethod(this, "getFocusedChild", params);
-	}
-
 	public void getFocusedRect(android.graphics.Rect param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -1286,6 +1143,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "getFocusedRect", params);
+	}
+
+	public boolean getFreezesText() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "getFreezesText", params);
 	}
 
 	public boolean getGlobalVisibleRect(android.graphics.Rect param_0, android.graphics.Point param_1) {
@@ -1299,6 +1165,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "getGlobalVisibleRect", params);
 	}
 
+	public int getGravity() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getGravity", params);
+	}
+
 	public android.os.Handler getHandler() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1306,6 +1181,24 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (android.os.Handler)com.tns.Platform.callJSMethod(this, "getHandler", params);
+	}
+
+	public int getHighlightColor() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getHighlightColor", params);
+	}
+
+	public java.lang.CharSequence getHint() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (java.lang.CharSequence)com.tns.Platform.callJSMethod(this, "getHint", params);
 	}
 
 	public void getHitRect(android.graphics.Rect param_0) {
@@ -1345,6 +1238,33 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "getId", params);
 	}
 
+	public int getImeActionId() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getImeActionId", params);
+	}
+
+	public java.lang.CharSequence getImeActionLabel() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (java.lang.CharSequence)com.tns.Platform.callJSMethod(this, "getImeActionLabel", params);
+	}
+
+	public int getImeOptions() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getImeOptions", params);
+	}
+
 	public int getImportantForAccessibility() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1352,6 +1272,34 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Integer)com.tns.Platform.callJSMethod(this, "getImportantForAccessibility", params);
+	}
+
+	public boolean getIncludeFontPadding() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "getIncludeFontPadding", params);
+	}
+
+	public android.os.Bundle getInputExtras(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			return (android.os.Bundle)com.tns.Platform.callJSMethod(this, "getInputExtras", params);
+	}
+
+	public int getInputType() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getInputType", params);
 	}
 
 	public boolean getKeepScreenOn() {
@@ -1390,24 +1338,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "getLayerType", params);
 	}
 
-	public android.view.animation.LayoutAnimationController getLayoutAnimation() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (android.view.animation.LayoutAnimationController)com.tns.Platform.callJSMethod(this, "getLayoutAnimation", params);
-	}
-
-	public android.view.animation.Animation.AnimationListener getLayoutAnimationListener() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (android.view.animation.Animation.AnimationListener)com.tns.Platform.callJSMethod(this, "getLayoutAnimationListener", params);
-	}
-
 	public int getLayoutDirection() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1426,15 +1356,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (android.view.ViewGroup.LayoutParams)com.tns.Platform.callJSMethod(this, "getLayoutParams", params);
 	}
 
-	public android.animation.LayoutTransition getLayoutTransition() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (android.animation.LayoutTransition)com.tns.Platform.callJSMethod(this, "getLayoutTransition", params);
-	}
-
 	protected float getLeftFadingEdgeStrength() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1451,6 +1372,53 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Integer)com.tns.Platform.callJSMethod(this, "getLeftPaddingOffset", params);
+	}
+
+	public int getLineBounds(int param_0, android.graphics.Rect param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getLineBounds", params);
+	}
+
+	public int getLineCount() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getLineCount", params);
+	}
+
+	public int getLineHeight() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getLineHeight", params);
+	}
+
+	public float getLineSpacingExtra() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Float)com.tns.Platform.callJSMethod(this, "getLineSpacingExtra", params);
+	}
+
+	public float getLineSpacingMultiplier() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Float)com.tns.Platform.callJSMethod(this, "getLineSpacingMultiplier", params);
 	}
 
 	public void getLocationInWindow(int[] param_0) {
@@ -1473,6 +1441,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "getLocationOnScreen", params);
 	}
 
+	public int getMarqueeRepeatLimit() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMarqueeRepeatLimit", params);
+	}
+
 	public android.graphics.Matrix getMatrix() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1480,6 +1457,78 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (android.graphics.Matrix)com.tns.Platform.callJSMethod(this, "getMatrix", params);
+	}
+
+	public int getMaxEms() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMaxEms", params);
+	}
+
+	public int getMaxHeight() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMaxHeight", params);
+	}
+
+	public int getMaxLines() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMaxLines", params);
+	}
+
+	public int getMaxWidth() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMaxWidth", params);
+	}
+
+	public int getMinEms() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMinEms", params);
+	}
+
+	public int getMinHeight() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMinHeight", params);
+	}
+
+	public int getMinLines() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMinLines", params);
+	}
+
+	public int getMinWidth() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMinWidth", params);
 	}
 
 	public int getMinimumHeight() {
@@ -1543,6 +1592,17 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Integer)com.tns.Platform.callJSMethod(this, "getNextFocusUpId", params);
+	}
+
+	public int getOffsetForPosition(float param_0, float param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getOffsetForPosition", params);
 	}
 
 	public android.view.View.OnFocusChangeListener getOnFocusChangeListener() {
@@ -1617,6 +1677,24 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "getPaddingTop", params);
 	}
 
+	public android.text.TextPaint getPaint() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.text.TextPaint)com.tns.Platform.callJSMethod(this, "getPaint", params);
+	}
+
+	public int getPaintFlags() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getPaintFlags", params);
+	}
+
 	public android.view.ViewParent getParentForAccessibility() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1624,15 +1702,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (android.view.ViewParent)com.tns.Platform.callJSMethod(this, "getParentForAccessibility", params);
-	}
-
-	public int getPersistentDrawingCache() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Integer)com.tns.Platform.callJSMethod(this, "getPersistentDrawingCache", params);
 	}
 
 	public float getPivotX() {
@@ -1651,6 +1720,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Float)com.tns.Platform.callJSMethod(this, "getPivotY", params);
+	}
+
+	public java.lang.String getPrivateImeOptions() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (java.lang.String)com.tns.Platform.callJSMethod(this, "getPrivateImeOptions", params);
 	}
 
 	public android.content.res.Resources getResources() {
@@ -1770,6 +1848,60 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "getScrollBarStyle", params);
 	}
 
+	public int getSelectionEnd() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getSelectionEnd", params);
+	}
+
+	public int getSelectionStart() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getSelectionStart", params);
+	}
+
+	public int getShadowColor() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getShadowColor", params);
+	}
+
+	public float getShadowDx() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Float)com.tns.Platform.callJSMethod(this, "getShadowDx", params);
+	}
+
+	public float getShadowDy() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Float)com.tns.Platform.callJSMethod(this, "getShadowDy", params);
+	}
+
+	public float getShadowRadius() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Float)com.tns.Platform.callJSMethod(this, "getShadowRadius", params);
+	}
+
 	public int getSolidColor() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1825,6 +1957,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (java.lang.Object)com.tns.Platform.callJSMethod(this, "getTag", params);
 	}
 
+	public java.lang.CharSequence getText() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (java.lang.CharSequence)com.tns.Platform.callJSMethod(this, "getText", params);
+	}
+
 	public int getTextAlignment() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1843,6 +1984,33 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "getTextDirection", params);
 	}
 
+	public java.util.Locale getTextLocale() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (java.util.Locale)com.tns.Platform.callJSMethod(this, "getTextLocale", params);
+	}
+
+	public float getTextScaleX() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Float)com.tns.Platform.callJSMethod(this, "getTextScaleX", params);
+	}
+
+	public float getTextSize() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Float)com.tns.Platform.callJSMethod(this, "getTextSize", params);
+	}
+
 	protected float getTopFadingEdgeStrength() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1859,6 +2027,60 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Integer)com.tns.Platform.callJSMethod(this, "getTopPaddingOffset", params);
+	}
+
+	public int getTotalPaddingBottom() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getTotalPaddingBottom", params);
+	}
+
+	public int getTotalPaddingEnd() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getTotalPaddingEnd", params);
+	}
+
+	public int getTotalPaddingLeft() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getTotalPaddingLeft", params);
+	}
+
+	public int getTotalPaddingRight() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getTotalPaddingRight", params);
+	}
+
+	public int getTotalPaddingStart() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getTotalPaddingStart", params);
+	}
+
+	public int getTotalPaddingTop() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getTotalPaddingTop", params);
 	}
 
 	public android.view.TouchDelegate getTouchDelegate() {
@@ -1895,6 +2117,24 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Float)com.tns.Platform.callJSMethod(this, "getTranslationY", params);
+	}
+
+	public android.graphics.Typeface getTypeface() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.graphics.Typeface)com.tns.Platform.callJSMethod(this, "getTypeface", params);
+	}
+
+	public android.text.style.URLSpan[] getUrls() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.text.style.URLSpan[])com.tns.Platform.callJSMethod(this, "getUrls", params);
 	}
 
 	public int getVerticalFadingEdgeLength() {
@@ -2042,6 +2282,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "hasOverlappingRendering", params);
 	}
 
+	public boolean hasSelection() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "hasSelection", params);
+	}
+
 	public boolean hasTransientState() {
 		if (!__initialized) {
 			__initialized = true;
@@ -2069,16 +2318,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "hashCode", params);
 	}
 
-	public int indexOfChild(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (Integer)com.tns.Platform.callJSMethod(this, "indexOfChild", params);
-	}
-
 	protected void initializeFadingEdge(android.content.res.TypedArray param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -2097,19 +2336,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "initializeScrollbars", params);
-	}
-
-	public void invalidate(int param_0, int param_1, int param_2, int param_3) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[4];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			params[3] = param_3;
-			com.tns.Platform.callJSMethod(this, "invalidate", params);
 	}
 
 	public void invalidate(android.graphics.Rect param_0) {
@@ -2131,15 +2357,17 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "invalidate", params);
 	}
 
-	public android.view.ViewParent invalidateChildInParent(int[] param_0, android.graphics.Rect param_1) {
+	public void invalidate(int param_0, int param_1, int param_2, int param_3) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[2];
+			java.lang.Object[] params = new Object[4];
 			params[0] = param_0;
 			params[1] = param_1;
-			return (android.view.ViewParent)com.tns.Platform.callJSMethod(this, "invalidateChildInParent", params);
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "invalidate", params);
 	}
 
 	public void invalidateDrawable(android.graphics.drawable.Drawable param_0) {
@@ -2161,42 +2389,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "isActivated", params);
 	}
 
-	public boolean isAlwaysDrawnWithCacheEnabled() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "isAlwaysDrawnWithCacheEnabled", params);
-	}
-
-	public boolean isAnimationCacheEnabled() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "isAnimationCacheEnabled", params);
-	}
-
-	protected boolean isChildrenDrawingOrderEnabled() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "isChildrenDrawingOrderEnabled", params);
-	}
-
-	protected boolean isChildrenDrawnWithCacheEnabled() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "isChildrenDrawnWithCacheEnabled", params);
-	}
-
 	public boolean isClickable() {
 		if (!__initialized) {
 			__initialized = true;
@@ -2204,6 +2396,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "isClickable", params);
+	}
+
+	public boolean isCursorVisible() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "isCursorVisible", params);
 	}
 
 	public boolean isDirty() {
@@ -2314,6 +2515,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "isInTouchMode", params);
 	}
 
+	public boolean isInputMethodTarget() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "isInputMethodTarget", params);
+	}
+
 	public boolean isLayoutRequested() {
 		if (!__initialized) {
 			__initialized = true;
@@ -2330,15 +2540,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "isLongClickable", params);
-	}
-
-	public boolean isMotionEventSplittingEnabled() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "isMotionEventSplittingEnabled", params);
 	}
 
 	public boolean isOpaque() {
@@ -2440,6 +2641,24 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "isSoundEffectsEnabled", params);
 	}
 
+	public boolean isSuggestionsEnabled() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "isSuggestionsEnabled", params);
+	}
+
+	public boolean isTextSelectable() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "isTextSelectable", params);
+	}
+
 	public boolean isVerticalFadingEdgeEnabled() {
 		if (!__initialized) {
 			__initialized = true;
@@ -2467,41 +2686,35 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "jumpDrawablesToCurrentState", params);
 	}
 
-	protected void measureChild(android.view.View param_0, int param_1, int param_2) {
+	public void layout(int param_0, int param_1, int param_2, int param_3) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			com.tns.Platform.callJSMethod(this, "measureChild", params);
-	}
-
-	protected void measureChildWithMargins(android.view.View param_0, int param_1, int param_2, int param_3, int param_4) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[5];
+			java.lang.Object[] params = new Object[4];
 			params[0] = param_0;
 			params[1] = param_1;
 			params[2] = param_2;
 			params[3] = param_3;
-			params[4] = param_4;
-			com.tns.Platform.callJSMethod(this, "measureChildWithMargins", params);
+			com.tns.Platform.callJSMethod(this, "layout", params);
 	}
 
-	protected void measureChildren(int param_0, int param_1) {
+	public int length() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "measureChildren", params);
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "length", params);
+	}
+
+	public boolean moveCursorToVisibleOffset() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "moveCursorToVisibleOffset", params);
 	}
 
 	public void offsetLeftAndRight(int param_0) {
@@ -2551,6 +2764,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "onAttachedToWindow", params);
 	}
 
+	public void onBeginBatchEdit() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			com.tns.Platform.callJSMethod(this, "onBeginBatchEdit", params);
+	}
+
 	public boolean onCheckIsTextEditor() {
 		if (!__initialized) {
 			__initialized = true;
@@ -2558,6 +2780,26 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "onCheckIsTextEditor", params);
+	}
+
+	public void onCommitCompletion(android.view.inputmethod.CompletionInfo param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "onCommitCompletion", params);
+	}
+
+	public void onCommitCorrection(android.view.inputmethod.CorrectionInfo param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "onCommitCorrection", params);
 	}
 
 	protected void onConfigurationChanged(android.content.res.Configuration param_0) {
@@ -2637,6 +2879,25 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "onDraw", params);
+	}
+
+	public void onEditorAction(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "onEditorAction", params);
+	}
+
+	public void onEndBatchEdit() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			com.tns.Platform.callJSMethod(this, "onEndBatchEdit", params);
 	}
 
 	public boolean onFilterTouchEventForSecurity(android.view.MotionEvent param_0) {
@@ -2727,26 +2988,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "onInitializeAccessibilityNodeInfo", params);
-	}
-
-	public boolean onInterceptHoverEvent(android.view.MotionEvent param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "onInterceptHoverEvent", params);
-	}
-
-	public boolean onInterceptTouchEvent(android.view.MotionEvent param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "onInterceptTouchEvent", params);
 	}
 
 	public boolean onKeyDown(int param_0, android.view.KeyEvent param_1) {
@@ -2864,7 +3105,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "onPopulateAccessibilityEvent", params);
 	}
 
-	protected boolean onRequestFocusInDescendants(int param_0, android.graphics.Rect param_1) {
+	public boolean onPreDraw() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "onPreDraw", params);
+	}
+
+	public boolean onPrivateIMECommand(java.lang.String param_0, android.os.Bundle param_1) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -2872,21 +3122,10 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[2];
 			params[0] = param_0;
 			params[1] = param_1;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "onRequestFocusInDescendants", params);
+			return (Boolean)com.tns.Platform.callJSMethod(this, "onPrivateIMECommand", params);
 	}
 
-	public boolean onRequestSendAccessibilityEvent(android.view.View param_0, android.view.accessibility.AccessibilityEvent param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "onRequestSendAccessibilityEvent", params);
-	}
-
-	protected void onRestoreInstanceState(android.os.Parcelable param_0) {
+	public void onRestoreInstanceState(android.os.Parcelable param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -2906,7 +3145,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "onRtlPropertiesChanged", params);
 	}
 
-	protected android.os.Parcelable onSaveInstanceState() {
+	public android.os.Parcelable onSaveInstanceState() {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -2936,6 +3175,17 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			params[2] = param_2;
 			params[3] = param_3;
 			com.tns.Platform.callJSMethod(this, "onScrollChanged", params);
+	}
+
+	protected void onSelectionChanged(int param_0, int param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "onSelectionChanged", params);
 	}
 
 	protected boolean onSetAlpha(int param_0) {
@@ -2968,6 +3218,29 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			com.tns.Platform.callJSMethod(this, "onStartTemporaryDetach", params);
+	}
+
+	protected void onTextChanged(java.lang.CharSequence param_0, int param_1, int param_2, int param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "onTextChanged", params);
+	}
+
+	public boolean onTextContextMenuItem(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "onTextContextMenuItem", params);
 	}
 
 	public boolean onTouchEvent(android.view.MotionEvent param_0) {
@@ -3152,6 +3425,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "postInvalidate", params);
 	}
 
+	public void postInvalidateDelayed(long param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
+	}
+
 	public void postInvalidateDelayed(long param_0, int param_1, int param_2, int param_3, int param_4) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3163,16 +3446,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			params[2] = param_2;
 			params[3] = param_3;
 			params[4] = param_4;
-			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
-	}
-
-	public void postInvalidateDelayed(long param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
 	}
 
@@ -3219,16 +3492,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "postOnAnimationDelayed", params);
 	}
 
-	public void recomputeViewAttributes(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "recomputeViewAttributes", params);
-	}
-
 	public void refreshDrawableState() {
 		if (!__initialized) {
 			__initialized = true;
@@ -3236,24 +3499,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			com.tns.Platform.callJSMethod(this, "refreshDrawableState", params);
-	}
-
-	public void removeAllViews() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "removeAllViews", params);
-	}
-
-	public void removeAllViewsInLayout() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "removeAllViewsInLayout", params);
 	}
 
 	public boolean removeCallbacks(java.lang.Runnable param_0) {
@@ -3264,17 +3509,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "removeCallbacks", params);
-	}
-
-	protected void removeDetachedView(android.view.View param_0, boolean param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "removeDetachedView", params);
 	}
 
 	public void removeOnAttachStateChangeListener(android.view.View.OnAttachStateChangeListener param_0) {
@@ -3297,89 +3531,14 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "removeOnLayoutChangeListener", params);
 	}
 
-	public void removeView(android.view.View param_0) {
+	public void removeTextChangedListener(android.text.TextWatcher param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "removeView", params);
-	}
-
-	public void removeViewAt(int param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "removeViewAt", params);
-	}
-
-	public void removeViewInLayout(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "removeViewInLayout", params);
-	}
-
-	public void removeViews(int param_0, int param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "removeViews", params);
-	}
-
-	public void removeViewsInLayout(int param_0, int param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "removeViewsInLayout", params);
-	}
-
-	public void requestChildFocus(android.view.View param_0, android.view.View param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "requestChildFocus", params);
-	}
-
-	public boolean requestChildRectangleOnScreen(android.view.View param_0, android.graphics.Rect param_1, boolean param_2) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[3];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "requestChildRectangleOnScreen", params);
-	}
-
-	public void requestDisallowInterceptTouchEvent(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "requestDisallowInterceptTouchEvent", params);
+			com.tns.Platform.callJSMethod(this, "removeTextChangedListener", params);
 	}
 
 	public void requestFitSystemWindows() {
@@ -3432,27 +3591,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "requestRectangleOnScreen", params);
 	}
 
-	public boolean requestSendAccessibilityEvent(android.view.View param_0, android.view.accessibility.AccessibilityEvent param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "requestSendAccessibilityEvent", params);
-	}
-
-	public void requestTransparentRegion(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "requestTransparentRegion", params);
-	}
-
 	public void restoreHierarchyState(android.util.SparseArray param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3483,15 +3621,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			params[1] = param_1;
 			params[2] = param_2;
 			com.tns.Platform.callJSMethod(this, "scheduleDrawable", params);
-	}
-
-	public void scheduleLayoutAnimation() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "scheduleLayoutAnimation", params);
 	}
 
 	public void scrollBy(int param_0, int param_1) {
@@ -3556,14 +3685,14 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setActivated", params);
 	}
 
-	public void setAddStatesFromChildren(boolean param_0) {
+	public void setAllCaps(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setAddStatesFromChildren", params);
+			com.tns.Platform.callJSMethod(this, "setAllCaps", params);
 	}
 
 	public void setAlpha(float param_0) {
@@ -3576,16 +3705,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setAlpha", params);
 	}
 
-	public void setAlwaysDrawnWithCacheEnabled(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setAlwaysDrawnWithCacheEnabled", params);
-	}
-
 	public void setAnimation(android.view.animation.Animation param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3594,16 +3713,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setAnimation", params);
-	}
-
-	public void setAnimationCacheEnabled(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setAnimationCacheEnabled", params);
 	}
 
 	public void setBackground(android.graphics.drawable.Drawable param_0) {
@@ -3656,36 +3765,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setCameraDistance", params);
 	}
 
-	protected void setChildrenDrawingCacheEnabled(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setChildrenDrawingCacheEnabled", params);
-	}
-
-	protected void setChildrenDrawingOrderEnabled(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setChildrenDrawingOrderEnabled", params);
-	}
-
-	protected void setChildrenDrawnWithCacheEnabled(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setChildrenDrawnWithCacheEnabled", params);
-	}
-
 	public void setClickable(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3696,24 +3775,92 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setClickable", params);
 	}
 
-	public void setClipChildren(boolean param_0) {
+	public void setCompoundDrawablePadding(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setClipChildren", params);
+			com.tns.Platform.callJSMethod(this, "setCompoundDrawablePadding", params);
 	}
 
-	public void setClipToPadding(boolean param_0) {
+	public void setCompoundDrawables(android.graphics.drawable.Drawable param_0, android.graphics.drawable.Drawable param_1, android.graphics.drawable.Drawable param_2, android.graphics.drawable.Drawable param_3) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[1];
+			java.lang.Object[] params = new Object[4];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setClipToPadding", params);
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "setCompoundDrawables", params);
+	}
+
+	public void setCompoundDrawablesRelative(android.graphics.drawable.Drawable param_0, android.graphics.drawable.Drawable param_1, android.graphics.drawable.Drawable param_2, android.graphics.drawable.Drawable param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "setCompoundDrawablesRelative", params);
+	}
+
+	public void setCompoundDrawablesRelativeWithIntrinsicBounds(int param_0, int param_1, int param_2, int param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "setCompoundDrawablesRelativeWithIntrinsicBounds", params);
+	}
+
+	public void setCompoundDrawablesRelativeWithIntrinsicBounds(android.graphics.drawable.Drawable param_0, android.graphics.drawable.Drawable param_1, android.graphics.drawable.Drawable param_2, android.graphics.drawable.Drawable param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "setCompoundDrawablesRelativeWithIntrinsicBounds", params);
+	}
+
+	public void setCompoundDrawablesWithIntrinsicBounds(int param_0, int param_1, int param_2, int param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "setCompoundDrawablesWithIntrinsicBounds", params);
+	}
+
+	public void setCompoundDrawablesWithIntrinsicBounds(android.graphics.drawable.Drawable param_0, android.graphics.drawable.Drawable param_1, android.graphics.drawable.Drawable param_2, android.graphics.drawable.Drawable param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "setCompoundDrawablesWithIntrinsicBounds", params);
 	}
 
 	public void setContentDescription(java.lang.CharSequence param_0) {
@@ -3726,14 +3873,24 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setContentDescription", params);
 	}
 
-	public void setDescendantFocusability(int param_0) {
+	public void setCursorVisible(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setDescendantFocusability", params);
+			com.tns.Platform.callJSMethod(this, "setCursorVisible", params);
+	}
+
+	public void setCustomSelectionActionModeCallback(android.view.ActionMode.Callback param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setCustomSelectionActionModeCallback", params);
 	}
 
 	public void setDrawingCacheBackgroundColor(int param_0) {
@@ -3776,6 +3933,26 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setDuplicateParentStateEnabled", params);
 	}
 
+	public void setEllipsize(android.text.TextUtils.TruncateAt param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setEllipsize", params);
+	}
+
+	public void setEms(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setEms", params);
+	}
+
 	public void setEnabled(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3784,6 +3961,37 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setEnabled", params);
+	}
+
+	public void setError(java.lang.CharSequence param_0, android.graphics.drawable.Drawable param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "setError", params);
+	}
+
+	public void setError(java.lang.CharSequence param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setError", params);
+	}
+
+	public void setExtractedText(android.view.inputmethod.ExtractedText param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setExtractedText", params);
 	}
 
 	public void setFadingEdgeLength(int param_0) {
@@ -3804,6 +4012,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setFilterTouchesWhenObscured", params);
+	}
+
+	public void setFilters(android.text.InputFilter[] param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setFilters", params);
 	}
 
 	public void setFitsSystemWindows(boolean param_0) {
@@ -3836,6 +4054,39 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setFocusableInTouchMode", params);
 	}
 
+	protected boolean setFrame(int param_0, int param_1, int param_2, int param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "setFrame", params);
+	}
+
+	public void setFreezesText(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setFreezesText", params);
+	}
+
+	public void setGravity(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setGravity", params);
+	}
+
 	public void setHapticFeedbackEnabled(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3854,6 +4105,26 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setHasTransientState", params);
+	}
+
+	public void setHeight(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setHeight", params);
+	}
+
+	public void setHighlightColor(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setHighlightColor", params);
 	}
 
 	public void setHorizontalFadingEdgeEnabled(boolean param_0) {
@@ -3876,6 +4147,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setHorizontalScrollBarEnabled", params);
 	}
 
+	public void setHorizontallyScrolling(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setHorizontallyScrolling", params);
+	}
+
 	public void setHovered(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3896,6 +4177,27 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setId", params);
 	}
 
+	public void setImeActionLabel(java.lang.CharSequence param_0, int param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "setImeActionLabel", params);
+	}
+
+	public void setImeOptions(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setImeOptions", params);
+	}
+
 	public void setImportantForAccessibility(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3906,6 +4208,36 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setImportantForAccessibility", params);
 	}
 
+	public void setIncludeFontPadding(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setIncludeFontPadding", params);
+	}
+
+	public void setInputExtras(int param_0) throws org.xmlpull.v1.XmlPullParserException, java.io.IOException {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setInputExtras", params);
+	}
+
+	public void setInputType(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setInputType", params);
+	}
+
 	public void setKeepScreenOn(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3914,6 +4246,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setKeepScreenOn", params);
+	}
+
+	public void setKeyListener(android.text.method.KeyListener param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setKeyListener", params);
 	}
 
 	public void setLabelFor(int param_0) {
@@ -3947,26 +4289,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setLayerType", params);
 	}
 
-	public void setLayoutAnimation(android.view.animation.LayoutAnimationController param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setLayoutAnimation", params);
-	}
-
-	public void setLayoutAnimationListener(android.view.animation.Animation.AnimationListener param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setLayoutAnimationListener", params);
-	}
-
 	public void setLayoutDirection(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3987,14 +4309,25 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setLayoutParams", params);
 	}
 
-	public void setLayoutTransition(android.animation.LayoutTransition param_0) {
+	public void setLineSpacing(float param_0, float param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "setLineSpacing", params);
+	}
+
+	public void setLines(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setLayoutTransition", params);
+			com.tns.Platform.callJSMethod(this, "setLines", params);
 	}
 
 	public void setLongClickable(boolean param_0) {
@@ -4005,6 +4338,96 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setLongClickable", params);
+	}
+
+	public void setMarqueeRepeatLimit(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMarqueeRepeatLimit", params);
+	}
+
+	public void setMaxEms(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMaxEms", params);
+	}
+
+	public void setMaxHeight(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMaxHeight", params);
+	}
+
+	public void setMaxLines(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMaxLines", params);
+	}
+
+	public void setMaxWidth(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMaxWidth", params);
+	}
+
+	public void setMinEms(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMinEms", params);
+	}
+
+	public void setMinHeight(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMinHeight", params);
+	}
+
+	public void setMinLines(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMinLines", params);
+	}
+
+	public void setMinWidth(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMinWidth", params);
 	}
 
 	public void setMinimumHeight(int param_0) {
@@ -4025,16 +4448,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setMinimumWidth", params);
-	}
-
-	public void setMotionEventSplittingEnabled(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setMotionEventSplittingEnabled", params);
 	}
 
 	public void setNextFocusDownId(int param_0) {
@@ -4117,6 +4530,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setOnDragListener", params);
 	}
 
+	public void setOnEditorActionListener(android.widget.TextView.OnEditorActionListener param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setOnEditorActionListener", params);
+	}
+
 	public void setOnFocusChangeListener(android.view.View.OnFocusChangeListener param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4135,16 +4558,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setOnGenericMotionListener", params);
-	}
-
-	public void setOnHierarchyChangeListener(android.view.ViewGroup.OnHierarchyChangeListener param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setOnHierarchyChangeListener", params);
 	}
 
 	public void setOnHoverListener(android.view.View.OnHoverListener param_0) {
@@ -4233,14 +4646,14 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setPaddingRelative", params);
 	}
 
-	public void setPersistentDrawingCache(int param_0) {
+	public void setPaintFlags(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setPersistentDrawingCache", params);
+			com.tns.Platform.callJSMethod(this, "setPaintFlags", params);
 	}
 
 	public void setPivotX(float param_0) {
@@ -4271,6 +4684,26 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setPressed", params);
+	}
+
+	public void setPrivateImeOptions(java.lang.String param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setPrivateImeOptions", params);
+	}
+
+	public void setRawInputType(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setRawInputType", params);
 	}
 
 	public void setRotation(float param_0) {
@@ -4423,6 +4856,26 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setScrollbarFadingEnabled", params);
 	}
 
+	public void setScroller(android.widget.Scroller param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setScroller", params);
+	}
+
+	public void setSelectAllOnFocus(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setSelectAllOnFocus", params);
+	}
+
 	public void setSelected(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4433,6 +4886,38 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setSelected", params);
 	}
 
+	public void setShadowLayer(float param_0, float param_1, float param_2, int param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "setShadowLayer", params);
+	}
+
+	public void setSingleLine() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			com.tns.Platform.callJSMethod(this, "setSingleLine", params);
+	}
+
+	public void setSingleLine(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setSingleLine", params);
+	}
+
 	public void setSoundEffectsEnabled(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4441,16 +4926,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setSoundEffectsEnabled", params);
-	}
-
-	protected void setStaticTransformationsEnabled(boolean param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "setStaticTransformationsEnabled", params);
 	}
 
 	public void setSystemUiVisibility(int param_0) {
@@ -4484,6 +4959,17 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setTag", params);
 	}
 
+	public void setText(java.lang.CharSequence param_0, android.widget.TextView.BufferType param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "setText", params);
+	}
+
 	public void setTextAlignment(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4494,6 +4980,37 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setTextAlignment", params);
 	}
 
+	public void setTextAppearance(android.content.Context param_0, int param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "setTextAppearance", params);
+	}
+
+	public void setTextColor(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setTextColor", params);
+	}
+
+	public void setTextColor(android.content.res.ColorStateList param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setTextColor", params);
+	}
+
 	public void setTextDirection(int param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4502,6 +5019,57 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setTextDirection", params);
+	}
+
+	public void setTextIsSelectable(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setTextIsSelectable", params);
+	}
+
+	public void setTextLocale(java.util.Locale param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setTextLocale", params);
+	}
+
+	public void setTextScaleX(float param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setTextScaleX", params);
+	}
+
+	public void setTextSize(float param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setTextSize", params);
+	}
+
+	public void setTextSize(int param_0, float param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "setTextSize", params);
 	}
 
 	public void setTouchDelegate(android.view.TouchDelegate param_0) {
@@ -4532,6 +5100,27 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setTranslationY", params);
+	}
+
+	public void setTypeface(android.graphics.Typeface param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setTypeface", params);
+	}
+
+	public void setTypeface(android.graphics.Typeface param_0, int param_1) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+			com.tns.Platform.callJSMethod(this, "setTypeface", params);
 	}
 
 	public void setVerticalFadingEdgeEnabled(boolean param_0) {
@@ -4574,6 +5163,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setVisibility", params);
 	}
 
+	public void setWidth(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setWidth", params);
+	}
+
 	public void setWillNotCacheDrawing(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4614,15 +5213,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setY", params);
 	}
 
-	public boolean shouldDelayChildPressedState() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "shouldDelayChildPressedState", params);
-	}
-
 	public boolean showContextMenu() {
 		if (!__initialized) {
 			__initialized = true;
@@ -4630,16 +5220,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Boolean)com.tns.Platform.callJSMethod(this, "showContextMenu", params);
-	}
-
-	public boolean showContextMenuForChild(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (Boolean)com.tns.Platform.callJSMethod(this, "showContextMenuForChild", params);
 	}
 
 	public android.view.ActionMode startActionMode(android.view.ActionMode.Callback param_0) {
@@ -4652,17 +5232,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (android.view.ActionMode)com.tns.Platform.callJSMethod(this, "startActionMode", params);
 	}
 
-	public android.view.ActionMode startActionModeForChild(android.view.View param_0, android.view.ActionMode.Callback param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			return (android.view.ActionMode)com.tns.Platform.callJSMethod(this, "startActionModeForChild", params);
-	}
-
 	public void startAnimation(android.view.animation.Animation param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4673,25 +5242,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "startAnimation", params);
 	}
 
-	public void startLayoutAnimation() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "startLayoutAnimation", params);
-	}
-
-	public void startViewTransition(android.view.View param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "startViewTransition", params);
-	}
-
 	public java.lang.String toString() {
 		if (!__initialized) {
 			__initialized = true;
@@ -4699,17 +5249,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (java.lang.String)com.tns.Platform.callJSMethod(this, "toString", params);
-	}
-
-	public void unscheduleDrawable(android.graphics.drawable.Drawable param_0, java.lang.Runnable param_1) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[2];
-			params[0] = param_0;
-			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "unscheduleDrawable", params);
 	}
 
 	public void unscheduleDrawable(android.graphics.drawable.Drawable param_0) {
@@ -4722,7 +5261,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "unscheduleDrawable", params);
 	}
 
-	public void updateViewLayout(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1) {
+	public void unscheduleDrawable(android.graphics.drawable.Drawable param_0, java.lang.Runnable param_1) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -4730,7 +5269,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[2];
 			params[0] = param_0;
 			params[1] = param_1;
-			com.tns.Platform.callJSMethod(this, "updateViewLayout", params);
+			com.tns.Platform.callJSMethod(this, "unscheduleDrawable", params);
 	}
 
 	protected boolean verifyDrawable(android.graphics.drawable.Drawable param_0) {

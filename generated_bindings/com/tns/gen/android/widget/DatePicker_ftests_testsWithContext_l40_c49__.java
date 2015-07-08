@@ -1,28 +1,40 @@
-package com.tns.gen.android.view;
+package com.tns.gen.android.widget;
 
-public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeScriptHashCodeProvider {
-	public ViewGroup_ftns_modules_ui_core_view_l31_c50__(android.content.Context param_0, android.util.AttributeSet param_1, int param_2) {
+public class DatePicker_ftests_testsWithContext_l40_c49__ extends android.widget.DatePicker implements com.tns.NativeScriptHashCodeProvider {
+	public DatePicker_ftests_testsWithContext_l40_c49__(android.content.Context param_0, android.util.AttributeSet param_1, int param_2) {
 		super(param_0, param_1, param_2);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
+			java.lang.Object[] params = new Object[3];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
-	public ViewGroup_ftns_modules_ui_core_view_l31_c50__(android.content.Context param_0, android.util.AttributeSet param_1) {
+	public DatePicker_ftests_testsWithContext_l40_c49__(android.content.Context param_0, android.util.AttributeSet param_1) {
 		super(param_0, param_1);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
+			java.lang.Object[] params = new Object[2];
+			params[0] = param_0;
+			params[1] = param_1;
+		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
-	public ViewGroup_ftns_modules_ui_core_view_l31_c50__(android.content.Context param_0) {
+	public DatePicker_ftests_testsWithContext_l40_c49__(android.content.Context param_0) {
 		super(param_0);
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+		com.tns.Platform.callJSMethod(this, "init", true, params);
 	}
 
 	public void addChildrenForAccessibility(java.util.ArrayList param_0) {
@@ -97,13 +109,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "addTouchables", params);
 	}
 
-	public void addView(android.view.View param_0) {
+	public void addView(android.view.View param_0, int param_1, int param_2) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[1];
+			java.lang.Object[] params = new Object[3];
 			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
 			com.tns.Platform.callJSMethod(this, "addView", params);
 	}
 
@@ -119,7 +133,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "addView", params);
 	}
 
-	public void addView(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1) {
+	public void addView(android.view.View param_0, int param_1) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -130,19 +144,17 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "addView", params);
 	}
 
-	public void addView(android.view.View param_0, int param_1, int param_2) {
+	public void addView(android.view.View param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[3];
+			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
 			com.tns.Platform.callJSMethod(this, "addView", params);
 	}
 
-	public void addView(android.view.View param_0, int param_1) {
+	public void addView(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -271,15 +283,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "bringToFront", params);
 	}
 
-	public void buildDrawingCache() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			com.tns.Platform.callJSMethod(this, "buildDrawingCache", params);
-	}
-
 	public void buildDrawingCache(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -287,6 +290,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "buildDrawingCache", params);
+	}
+
+	public void buildDrawingCache() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
 			com.tns.Platform.callJSMethod(this, "buildDrawingCache", params);
 	}
 
@@ -986,26 +998,7 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "gatherTransparentRegion", params);
 	}
 
-	protected android.view.ViewGroup.LayoutParams generateDefaultLayoutParams() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
-			return (android.view.ViewGroup.LayoutParams)com.tns.Platform.callJSMethod(this, "generateDefaultLayoutParams", params);
-	}
-
 	protected android.view.ViewGroup.LayoutParams generateLayoutParams(android.view.ViewGroup.LayoutParams param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
-			return (android.view.ViewGroup.LayoutParams)com.tns.Platform.callJSMethod(this, "generateLayoutParams", params);
-	}
-
-	public android.view.ViewGroup.LayoutParams generateLayoutParams(android.util.AttributeSet param_0) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
@@ -1087,6 +1080,24 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "getBottomPaddingOffset", params);
 	}
 
+	public android.widget.CalendarView getCalendarView() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.widget.CalendarView)com.tns.Platform.callJSMethod(this, "getCalendarView", params);
+	}
+
+	public boolean getCalendarViewShown() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "getCalendarViewShown", params);
+	}
+
 	public float getCameraDistance() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1149,6 +1160,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Boolean)com.tns.Platform.callJSMethod(this, "getChildVisibleRect", params);
 	}
 
+	public boolean getConsiderGoneChildrenWhenMeasuring() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "getConsiderGoneChildrenWhenMeasuring", params);
+	}
+
 	public java.lang.CharSequence getContentDescription() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1165,6 +1185,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (android.view.ContextMenu.ContextMenuInfo)com.tns.Platform.callJSMethod(this, "getContextMenuInfo", params);
+	}
+
+	public int getDayOfMonth() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getDayOfMonth", params);
 	}
 
 	public int getDescendantFocusability() {
@@ -1185,6 +1214,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (android.view.Display)com.tns.Platform.callJSMethod(this, "getDisplay", params);
 	}
 
+	public android.graphics.Bitmap getDrawingCache() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.graphics.Bitmap)com.tns.Platform.callJSMethod(this, "getDrawingCache", params);
+	}
+
 	public android.graphics.Bitmap getDrawingCache(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -1192,15 +1230,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
-			return (android.graphics.Bitmap)com.tns.Platform.callJSMethod(this, "getDrawingCache", params);
-	}
-
-	public android.graphics.Bitmap getDrawingCache() {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = null;
 			return (android.graphics.Bitmap)com.tns.Platform.callJSMethod(this, "getDrawingCache", params);
 	}
 
@@ -1286,6 +1315,24 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "getFocusedRect", params);
+	}
+
+	public android.graphics.drawable.Drawable getForeground() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (android.graphics.drawable.Drawable)com.tns.Platform.callJSMethod(this, "getForeground", params);
+	}
+
+	public int getForegroundGravity() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getForegroundGravity", params);
 	}
 
 	public boolean getGlobalVisibleRect(android.graphics.Rect param_0, android.graphics.Point param_1) {
@@ -1482,6 +1529,33 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (android.graphics.Matrix)com.tns.Platform.callJSMethod(this, "getMatrix", params);
 	}
 
+	public long getMaxDate() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Long)com.tns.Platform.callJSMethod(this, "getMaxDate", params);
+	}
+
+	public boolean getMeasureAllChildren() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "getMeasureAllChildren", params);
+	}
+
+	public long getMinDate() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Long)com.tns.Platform.callJSMethod(this, "getMinDate", params);
+	}
+
 	public int getMinimumHeight() {
 		if (!__initialized) {
 			__initialized = true;
@@ -1498,6 +1572,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 		}
 			java.lang.Object[] params = null;
 			return (Integer)com.tns.Platform.callJSMethod(this, "getMinimumWidth", params);
+	}
+
+	public int getMonth() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getMonth", params);
 	}
 
 	public int getNextFocusDownId() {
@@ -1779,6 +1862,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "getSolidColor", params);
 	}
 
+	public boolean getSpinnersShown() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Boolean)com.tns.Platform.callJSMethod(this, "getSpinnersShown", params);
+	}
+
 	protected int getSuggestedMinimumHeight() {
 		if (!__initialized) {
 			__initialized = true;
@@ -2006,6 +2098,15 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Float)com.tns.Platform.callJSMethod(this, "getY", params);
 	}
 
+	public int getYear() {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = null;
+			return (Integer)com.tns.Platform.callJSMethod(this, "getYear", params);
+	}
+
 	public boolean hasFocus() {
 		if (!__initialized) {
 			__initialized = true;
@@ -2079,6 +2180,19 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (Integer)com.tns.Platform.callJSMethod(this, "indexOfChild", params);
 	}
 
+	public void init(int param_0, int param_1, int param_2, android.widget.DatePicker.OnDateChangedListener param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
+			com.tns.Platform.callJSMethod(this, "init", false, params);
+	}
+
 	protected void initializeFadingEdge(android.content.res.TypedArray param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -2099,19 +2213,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "initializeScrollbars", params);
 	}
 
-	public void invalidate(int param_0, int param_1, int param_2, int param_3) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[4];
-			params[0] = param_0;
-			params[1] = param_1;
-			params[2] = param_2;
-			params[3] = param_3;
-			com.tns.Platform.callJSMethod(this, "invalidate", params);
-	}
-
 	public void invalidate(android.graphics.Rect param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -2128,6 +2229,19 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.initInstance(this);
 		}
 			java.lang.Object[] params = null;
+			com.tns.Platform.callJSMethod(this, "invalidate", params);
+	}
+
+	public void invalidate(int param_0, int param_1, int param_2, int param_3) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[4];
+			params[0] = param_0;
+			params[1] = param_1;
+			params[2] = param_2;
+			params[3] = param_3;
 			com.tns.Platform.callJSMethod(this, "invalidate", params);
 	}
 
@@ -3152,6 +3266,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "postInvalidate", params);
 	}
 
+	public void postInvalidateDelayed(long param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
+	}
+
 	public void postInvalidateDelayed(long param_0, int param_1, int param_2, int param_3, int param_4) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3163,16 +3287,6 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			params[2] = param_2;
 			params[3] = param_3;
 			params[4] = param_4;
-			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
-	}
-
-	public void postInvalidateDelayed(long param_0) {
-		if (!__initialized) {
-			__initialized = true;
-			com.tns.Platform.initInstance(this);
-		}
-			java.lang.Object[] params = new Object[1];
-			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "postInvalidateDelayed", params);
 	}
 
@@ -3646,6 +3760,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setBackgroundResource", params);
 	}
 
+	public void setCalendarViewShown(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setCalendarViewShown", params);
+	}
+
 	public void setCameraDistance(float param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -3836,6 +3960,26 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setFocusableInTouchMode", params);
 	}
 
+	public void setForeground(android.graphics.drawable.Drawable param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setForeground", params);
+	}
+
+	public void setForegroundGravity(int param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setForegroundGravity", params);
+	}
+
 	public void setHapticFeedbackEnabled(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4005,6 +4149,36 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			java.lang.Object[] params = new Object[1];
 			params[0] = param_0;
 			com.tns.Platform.callJSMethod(this, "setLongClickable", params);
+	}
+
+	public void setMaxDate(long param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMaxDate", params);
+	}
+
+	public void setMeasureAllChildren(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMeasureAllChildren", params);
+	}
+
+	public void setMinDate(long param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setMinDate", params);
 	}
 
 	public void setMinimumHeight(int param_0) {
@@ -4443,6 +4617,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "setSoundEffectsEnabled", params);
 	}
 
+	public void setSpinnersShown(boolean param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "setSpinnersShown", params);
+	}
+
 	protected void setStaticTransformationsEnabled(boolean param_0) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4701,6 +4885,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			return (java.lang.String)com.tns.Platform.callJSMethod(this, "toString", params);
 	}
 
+	public void unscheduleDrawable(android.graphics.drawable.Drawable param_0) {
+		if (!__initialized) {
+			__initialized = true;
+			com.tns.Platform.initInstance(this);
+		}
+			java.lang.Object[] params = new Object[1];
+			params[0] = param_0;
+			com.tns.Platform.callJSMethod(this, "unscheduleDrawable", params);
+	}
+
 	public void unscheduleDrawable(android.graphics.drawable.Drawable param_0, java.lang.Runnable param_1) {
 		if (!__initialized) {
 			__initialized = true;
@@ -4712,14 +4906,16 @@ public class ViewGroup extends android.view.ViewGroup implements com.tns.NativeS
 			com.tns.Platform.callJSMethod(this, "unscheduleDrawable", params);
 	}
 
-	public void unscheduleDrawable(android.graphics.drawable.Drawable param_0) {
+	public void updateDate(int param_0, int param_1, int param_2) {
 		if (!__initialized) {
 			__initialized = true;
 			com.tns.Platform.initInstance(this);
 		}
-			java.lang.Object[] params = new Object[1];
+			java.lang.Object[] params = new Object[3];
 			params[0] = param_0;
-			com.tns.Platform.callJSMethod(this, "unscheduleDrawable", params);
+			params[1] = param_1;
+			params[2] = param_2;
+			com.tns.Platform.callJSMethod(this, "updateDate", params);
 	}
 
 	public void updateViewLayout(android.view.View param_0, android.view.ViewGroup.LayoutParams param_1) {
