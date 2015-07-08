@@ -4,20 +4,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 import java.io.OutputStreamWriter;
-import java.util.ArrayDeque;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -27,8 +22,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.extend.generator.NSClassLoader;
-import com.extend.generator.TreeNode.FieldInfo;
-import com.extend.generator.TreeNode.MethodInfo;
 
 public class JarLister {
 	private static HashMap<String, HashSet<String>> overridenClasses = new HashMap<String, HashSet<String>>();
@@ -41,8 +34,6 @@ public class JarLister {
 			return o1.getName().compareTo(o2.getName());
 		}
 	}
-
-	private static MethodNameComparator methodNameComparator = new MethodNameComparator();
 
 	private static void ensureDirectories(String outDir, String[] parts) {
 		File curDir = new File(outDir);
@@ -61,170 +52,11 @@ public class JarLister {
 		}
 	}
 
-	private static ArrayList<TreeNode> getMethodSignature(TreeNode root, Class<?> retType, Class<?>[] params)
-			throws Exception {
-		ArrayList<TreeNode> sig = new ArrayList<TreeNode>();
-
-		boolean isVoid = retType.getName().equals("void");
-
-		TreeNode node = null;
-
-		if (!isVoid) {
-			node = getOrCreateNode(root, retType);
-		}
-		sig.add(node);
-
-		for (Class<?> param : params) {
-			node = getOrCreateNode(root, param);
-			sig.add(node);
-		}
-
-		return sig;
-	}
-
-	private static TreeNode getOrCreateNode(TreeNode root, Class<?> clazz) throws Exception {
-		Class<?> c = clazz;
-
-		if (c.isPrimitive()) {
-			return TreeNode.getPrimitive(c);
-		}
-
-		TreeNode node = root;
-
-		boolean isArray = false;
-
-		while (c.isArray()) {
-			isArray = true;
-			TreeNode child = node.getChild("[");
-			if (child == null) {
-				child = node.createChild("[");
-				child.nodeType = TreeNode.Array;
-				child.offsetValue = 1;
-			}
-			c = c.getComponentType();
-			node = child;
-		}
-
-		String name;
-		if (c.isPrimitive()) {
-			if (c.equals(byte.class)) {
-				name = "B";
-			} else if (c.equals(short.class)) {
-				name = "C";
-			} else if (c.equals(int.class)) {
-				name = "I";
-			} else if (c.equals(long.class)) {
-				name = "J";
-			} else if (c.equals(float.class)) {
-				name = "F";
-			} else if (c.equals(double.class)) {
-				name = "D";
-			} else if (c.equals(boolean.class)) {
-				name = "Z";
-			} else if (c.equals(char.class)) {
-				name = "C";
-			} else {
-				throw new Exception("unknown primitive type=" + c.getName());
-			}
-		} else {
-			name = c.getSimpleName();
-		}
-
-		if (isArray) {
-			name = c.getCanonicalName();
-			TreeNode child = node.getChild(name);
-			if (child == null) {
-				child = node.createChild(name);
-				if (c.isPrimitive()) {
-					TreeNode tmp = TreeNode.getPrimitive(c);
-					child.nodeType = tmp.nodeType;
-				} else {
-					child.nodeType = c.isInterface() ? TreeNode.Interface : TreeNode.Class;
-					int classModifilers = c.getModifiers();
-					if (Modifier.isStatic(classModifilers)) {
-						child.nodeType |= TreeNode.Static;
-					}
-				}
-				child.arrayElement = getOrCreateNode(root, c);
-			}
-			node = child;
-
-			return node;
-		}
-
-		String[] packages = null;
-		if (c.isPrimitive()) {
-			packages = new String[0];
-		} else {
-			packages = c.getPackage().getName().split("\\.");
-		}
-
-		for (String p : packages) {
-			TreeNode child = node.getChild(p);
-			if (child == null) {
-				child = node.createChild(p);
-				node.nodeType = TreeNode.Package;
-			}
-			node = child;
-		}
-
-		Class<?> outer = c.getEnclosingClass();
-		ArrayList<Class<?>> outerClasses = new ArrayList<Class<?>>();
-		while (outer != null) {
-			outerClasses.add(outer);
-			outer = outer.getEnclosingClass();
-		}
-
-		if (outerClasses.size() > 0) {
-			for (int i = outerClasses.size() - 1; i >= 0; i--) {
-				outer = outerClasses.get(i);
-				String outerClassname = outer.getSimpleName();
-				TreeNode child = node.getChild(outerClassname);
-				if (child == null) {
-					child = node.createChild(outerClassname);
-					child.nodeType = outer.isInterface() ? TreeNode.Interface : TreeNode.Class;
-					int outerModifilers = outer.getModifiers();
-					if (Modifier.isStatic(outerModifilers)) {
-						child.nodeType |= TreeNode.Static;
-					}
-				}
-				node = child;
-			}
-		}
-
-		TreeNode child = node.getChild(name);
-		if (child == null) {
-			child = node.createChild(name);
-			if (c.isPrimitive()) {
-				TreeNode tmp = TreeNode.getPrimitive(c);
-				child.nodeType = tmp.nodeType;
-			} else {
-				child.nodeType = c.isInterface() ? TreeNode.Interface : TreeNode.Class;
-				int classModifilers = c.getModifiers();
-				if (Modifier.isStatic(classModifilers)) {
-					child.nodeType |= TreeNode.Static;
-				}
-			}
-		}
-		node = child;
-
-		Class<?> baseClass = clazz.getSuperclass();
-		if (baseClass != null)
-			node.baseClassNode = getOrCreateNode(root, baseClass);
-
-		return node;
-	}
-
 	private static void generateJavaBindings(Class<?> clazz, String outDir) throws Exception {
 
 		if (clazz.isSynthetic()) {
 			return;
 		}
-
-		// if (clazz.getEnclosingClass() != null)
-		// {
-		// return;
-		// }
 
 		int clazzModifiers = clazz.getModifiers();
 
@@ -241,11 +73,6 @@ public class JarLister {
 			if (!hasNestedInterfaces && !hasNestedClasses)
 				return;
 		}
-
-		// if (Modifier.isStatic(clazzModifiers))
-		// {
-		// throw new Exception("this should NEVER happen");
-		// }
 
 		if (clazz.getCanonicalName().startsWith("java.nio.")) {
 			return;
@@ -299,7 +126,7 @@ public class JarLister {
 
 				out.write("package " + packagePrefix + classPackage.getName() + ";\n\n");
 
-				boolean hasInitOverride = ((HashSet) overridenClasses.get(key)).contains("init");
+				boolean hasInitOverride = ((HashSet<String>)overridenClasses.get(key)).contains("init");
 				generateJavaBindingsRec(clazz, out, 0, key, hasInitOverride);
 
 				out.flush();
@@ -309,12 +136,12 @@ public class JarLister {
 	}
 
 	private static String getLocationOfClass(String key) {
-		String result = null;
-		String locationSeparator = LOCATION_SEPARATOR;
-		String[] fileParts = key.split(locationSeparator);
-		result = locationSeparator + fileParts[1];
+		String extendLocation = null;
+		
+		int indexOfFileSeparator = key.indexOf(LOCATION_SEPARATOR);
+		extendLocation = key.substring(indexOfFileSeparator);
 
-		return result;
+		return extendLocation;
 	}
 
 	private static String getFullClassName(Class<?> clazz, String key) {
@@ -552,11 +379,6 @@ public class JarLister {
 			out.write(tabs + "\tprivate " + clazz.getSimpleName() + "() {\n");
 			out.write(tabs + "\t}\n");
 
-			// for (Class<?> nested : clazz.getDeclaredClasses()) {
-			//
-			// generateJavaBindingsRec(nested, out, level + 1, );
-			// }
-
 			out.write(tabs + "}\n");
 
 			return;
@@ -587,10 +409,10 @@ public class JarLister {
 
 				if (!hasPublicCtors) {
 					if (Modifier.isStatic(clazzModifiers)) {
-						out.write(tabs + "public static class " + clazz.getSimpleName() + " extends "
+						out.write(tabs + "public static class " + fullClassName + " extends "
 								+ clazz.getCanonicalName() + " implements com.tns.NativeScriptHashCodeProvider {\n");
 					} else {
-						out.write(tabs + "public class " + clazz.getSimpleName() + " extends "
+						out.write(tabs + "public class " + fullClassName + " extends "
 								+ clazz.getCanonicalName() + " implements com.tns.NativeScriptHashCodeProvider {\n");
 					}
 					hasPublicCtors = true;
@@ -631,6 +453,9 @@ public class JarLister {
 
 		for (Method m : methods2) {
 			if (m.isSynthetic()) {
+				continue;
+			}
+			if(!overridenClasses.get(currentKey).contains(m.getName())) {
 				continue;
 			}
 
@@ -679,7 +504,7 @@ public class JarLister {
 				if (clazz.isInterface()) {
 					writeInterfaceMethodImplementation(out, level, m, retType);
 				} else {
-					if (isAbstract) {
+					if (isAbstract && clazz.isInterface()) {
 						writeAbstractMethodImplementation(out, level, m, retType);
 					} else {
 						writeMethodBody(out, level, clazz, m, retType, methodGroupIdx);
@@ -700,7 +525,6 @@ public class JarLister {
 
 		writeNativeScriptHashCodeProviderMethods(out, level, clazz, methodGroupIdx, methodGroups);
 
-		// close class/interface
 		out.write(tabs + "}\n");
 	}
 
@@ -800,9 +624,6 @@ public class JarLister {
 
 		out.write(" {\n");
 
-		// int outIdx = methodGroupIdx / 8;
-		// int inIdx = methodGroupIdx % 8;
-
 		if (checkIfMustWriteInitializationSection(clazz, m)) {
 			boolean shouldInitializeWithIntent = clazz.getName().equals("android.app.Activity")
 					&& m.getName().equals("onCreate");
@@ -810,8 +631,6 @@ public class JarLister {
 			writeCheckForInitialization(out, level, shouldInitializeWithIntent);
 		}
 
-		// out.write(tabs + "\t\tif ((__ho" + outIdx + " & (1 << " + inIdx +
-		// ")) > 0) { \n");
 		if (paramTypes.length == 0) {
 			out.write(tabs + "\t\t\tjava.lang.Object[] params = null;\n");
 		} else {
@@ -830,24 +649,6 @@ public class JarLister {
 		} else {
 			out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", params);\n");
 		}
-
-		// out.write(tabs + "\t\t} else {\n");
-		//
-		// out.write(tabs + "\t\t\t");
-		// if (retType != "void") {
-		// out.write("return ");
-		// }
-		// out.write("super." + m.getName());
-		// out.write("(");
-		// for (int i = 0; i < paramTypes.length; i++) {
-		// if (i > 0) {
-		// out.write(", ");
-		// }
-		// out.write("param_" + i);
-		// }
-		// out.write(");\n");
-		//
-		// out.write(tabs + "\t\t}\n");
 
 		out.write(tabs + "\t}\n\n");
 
@@ -914,7 +715,6 @@ public class JarLister {
 			writeCheckForInitialization(out, level, false /* shouldInitializedWithIntent */);
 		}
 
-		// out.write(tabs + "\t\tif (__ctorOverridden) {\n");
 		if (hasInitOverride) {
 			int len1 = paramTypes.length - startIndex;
 			if (len1 == 0) {
@@ -926,7 +726,6 @@ public class JarLister {
 				}
 			}
 			out.write(tabs + "\t\tcom.tns.Platform.callJSMethod(this, \"init\", true, params);\n");
-			// out.write(tabs + "\t\t}\n");
 		}
 		out.write(tabs + "\t}\n\n");
 
@@ -1059,138 +858,6 @@ public class JarLister {
 		return tabs;
 	}
 
-	private static boolean isMethodOverrriden(final Method myMethod) {
-		Class<?> declaringClass = myMethod.getDeclaringClass();
-		Class<?>[] myMethodParams = myMethod.getParameterTypes();
-		if (declaringClass.equals(Object.class)) {
-			return false;
-		}
-		try {
-			Class<?> sup = declaringClass.getSuperclass();
-			Method[] dm = sup.getDeclaredMethods();
-			for (Method m : dm) {
-				if (!m.getName().equals(myMethod.getName()))
-					continue;
-
-				Class<?>[] mp = m.getParameterTypes();
-				if (mp.length != myMethodParams.length)
-					continue;
-
-				boolean same = true;
-				for (int i = 0; i < mp.length; i++) {
-					if (!mp[i].equals(myMethodParams[i])) {
-						same = false;
-						break;
-					}
-				}
-				if (same)
-					return true;
-			}
-			declaringClass.getSuperclass().getMethod(myMethod.getName(), myMethod.getParameterTypes());
-			return true;
-		} catch (NoSuchMethodException e) {
-			for (Class<?> iface : declaringClass.getInterfaces()) {
-				try {
-					iface.getMethod(myMethod.getName(), myMethod.getParameterTypes());
-					return true;
-				} catch (NoSuchMethodException ignored) {
-
-				}
-			}
-			return false;
-		}
-	}
-
-	private static void generateMetadata(Class<?> clazz, List<String> knownMetadataTypes, TreeNode root)
-			throws Exception {
-		int classModifiers = clazz.getModifiers();
-
-		if (!Modifier.isPublic(classModifiers)) {
-			return;
-		}
-
-		String typeName = clazz.getName();
-
-		knownMetadataTypes.add(typeName);
-
-		TreeNode node = getOrCreateNode(root, clazz);
-
-		// Method[] methods = clazz.getDeclaredMethods();
-		Method[] tmp = clazz.getMethods();
-		ArrayList<Method> methods = new ArrayList<Method>();
-		for (Method m : tmp) {
-			methods.add(m);
-		}
-		Class<?> curClass = clazz;
-		while (curClass != null) {
-			tmp = curClass.getDeclaredMethods();
-			for (Method m : tmp) {
-				int modifiers = m.getModifiers();
-				if (Modifier.isProtected(modifiers) && !Modifier.isStatic(modifiers)) {
-					if (isMethodOverrriden(m))
-						continue;
-
-					methods.add(m);
-				}
-			}
-			curClass = curClass.getSuperclass();
-		}
-
-		if (clazz.isInterface()) {
-			for (Method m : Object.class.getDeclaredMethods()) {
-				methods.add(m);
-			}
-		}
-
-		Collections.sort(methods, methodNameComparator);
-
-		for (Method m : methods) {
-			if (m.isSynthetic())
-				continue;
-
-			int modifiers = m.getModifiers();
-			if (Modifier.isPublic(modifiers) || Modifier.isProtected(modifiers)) {
-				boolean isStatic = Modifier.isStatic(modifiers);
-
-				MethodInfo mi = new MethodInfo(m.getName());
-
-				Class<?>[] params = m.getParameterTypes();
-				mi.signature = getMethodSignature(root, m.getReturnType(), params);// +
-																					// " "
-																					// +
-																					// params.length);
-
-				if (isStatic) {
-					mi.declaringType = getOrCreateNode(root, m.getDeclaringClass());
-					node.staticMethods.add(mi);
-				} else {
-					node.instanceMethods.add(mi);
-				}
-			}
-		}
-
-		Field[] fields = clazz.getFields();
-
-		for (Field f : fields) {
-			int modifiers = f.getModifiers();
-			if (Modifier.isPublic(modifiers)) {
-				boolean isStatic = Modifier.isStatic(modifiers);
-
-				FieldInfo fi = new FieldInfo(f.getName());
-
-				Class<?> type = f.getType();
-				fi.valueType = getOrCreateNode(root, type);
-
-				if (isStatic) {
-					fi.declaringType = getOrCreateNode(root, f.getDeclaringClass());
-					node.staticFields.add(fi);
-				} else {
-					node.instanceFields.add(fi);
-				}
-			}
-		}
-	}
-
 	public static Map<Type, Type> getGenericParentsMap2(Class<?> clazz) {
 		List<Type> parents = new ArrayList<Type>();
 
@@ -1236,36 +903,6 @@ public class JarLister {
 		return wrapped;
 	}
 
-	private static void writeKnownMetadata(List<String> knownMetadata) throws Exception {
-		FileOutputStream fos = new FileOutputStream("bin/out/__Metadata.java");
-		OutputStreamWriter out = new OutputStreamWriter(fos, "UTF-8");
-
-		out.write("package com.tns;\n\n");
-
-		out.write("import java.util.HashSet;\n\n");
-
-		out.write("class Metadata {\n");
-		out.write("\tprivate static HashSet<String> knownMetadata = new HashSet<String>();\n\n");
-
-		out.write("\tpublic static HashSet<String> getKnownMetadata() {\n");
-
-		out.write("\t\t if (knownMetadata.isEmpty()) {\n");
-
-		for (String typeName : knownMetadata) {
-			out.write("\t\t\tknownMetadata.add(\"" + typeName + "\");\n");
-		}
-		out.write("\t\t}\n");
-
-		out.write("\t\treturn knownMetadata;\n");
-
-		out.write("\t}\n");
-
-		out.write("}");
-
-		out.close();
-		fos.close();
-	}
-
 	public static void startGenerateMetadata(String[] args, String[] jars) throws Exception {
 		String[] outDirs = new String[jars.length];
 
@@ -1298,7 +935,6 @@ public class JarLister {
 		String[] outDirs = new String[jars.length];
 
 		for (int i = 0; i < jars.length; i++) {
-			String jar = jars[i];
 			String[] dirs = { "com/", "tns/", "gen/" };
 			String outputDir = ExtendClassGenerator.outFilesDir + '/';
 			for (String d : dirs) {
@@ -1368,243 +1004,4 @@ public class JarLister {
 		}
 	}
 
-	private static byte[] writeUniqueName_lenBuff = new byte[2];
-
-	private static int writeUniqueName(String name, HashMap<String, Integer> uniqueStrings,
-			FileOutputStream outStringsStream) throws Exception {
-		int position = (int) outStringsStream.getChannel().position();
-
-		int len = name.length();
-		writeUniqueName_lenBuff[0] = (byte) (len & 0xFF);
-		writeUniqueName_lenBuff[1] = (byte) ((len >> 8) & 0xFF);
-		outStringsStream.write(writeUniqueName_lenBuff);
-		outStringsStream.write(name.getBytes("UTF-8"));
-
-		uniqueStrings.put(name, position);
-
-		return position;
-	}
-
-	private static byte[] writeInt_buff = new byte[4];
-
-	private static void writeInt(int value, FileOutputStream out) throws Exception {
-		writeInt_buff[0] = (byte) (value & 0xFF);
-		writeInt_buff[1] = (byte) ((value >> 8) & 0xFF);
-		writeInt_buff[2] = (byte) ((value >> 16) & 0xFF);
-		writeInt_buff[3] = (byte) ((value >> 24) & 0xFF);
-
-		out.write(writeInt_buff);
-	}
-
-	private static void writeMethodInfo(MethodInfo mi, HashMap<String, Integer> uniqueStrings,
-			FileOutputStream outValueStream) throws Exception {
-		int pos = uniqueStrings.get(mi.name).intValue();
-		writeInt(pos, outValueStream);
-
-		int sigLen = writeLength(mi.signature.size(), outValueStream);
-		for (int i = 0; i < sigLen; i++) {
-			TreeNode arg = mi.signature.get(i);
-
-			writeTreeNodeId(arg, outValueStream);
-		}
-	}
-
-	private static byte[] writeTreeNodeId_buff = new byte[2];
-
-	private static void writeTreeNodeId(TreeNode node, FileOutputStream out) throws Exception {
-		if (node == null) {
-			writeTreeNodeId_buff[0] = writeTreeNodeId_buff[1] = 0;
-		} else {
-			writeTreeNodeId_buff[0] = (byte) (node.id & 0xFF);
-			writeTreeNodeId_buff[1] = (byte) ((node.id >> 8) & 0xFF);
-		}
-		out.write(writeTreeNodeId_buff);
-	}
-
-	private static byte[] writeLength_lenBuff = new byte[2];
-
-	private static int writeLength(int length, FileOutputStream out) throws Exception {
-		writeLength_lenBuff[0] = (byte) (length & 0xFF);
-		writeLength_lenBuff[1] = (byte) ((length >> 8) & 0xFF);
-		out.write(writeLength_lenBuff);
-
-		return length;
-	}
-
-	private static void writeTree(TreeNode root) throws Exception {
-		short curId = 0;
-
-		ArrayDeque<TreeNode> d = new ArrayDeque<TreeNode>();
-
-		FileOutputStream outStringsStream = new FileOutputStream("bin/treeStringsStream.dat");
-
-		HashMap<String, Integer> uniqueStrings = new HashMap<String, Integer>();
-
-		int commonInterfacePrefixPosition = writeUniqueName("com/tns/", uniqueStrings, outStringsStream);
-
-		d.push(root);
-		while (!d.isEmpty()) {
-			TreeNode n = d.pollFirst();
-			n.id = n.firstChildId = n.nextSiblingId = curId++;
-
-			String name = n.getName();
-
-			if (uniqueStrings.containsKey(name)) {
-				n.offsetName = uniqueStrings.get(name).intValue();
-			} else {
-				n.offsetName = writeUniqueName(name, uniqueStrings, outStringsStream);
-			}
-
-			if (((n.nodeType & TreeNode.Interface) == TreeNode.Interface)
-					|| ((n.nodeType & TreeNode.Class) == TreeNode.Class)) {
-				for (int i = 0; i < n.instanceMethods.size(); i++) {
-					name = n.instanceMethods.get(i).name;
-					if (!uniqueStrings.containsKey(name)) {
-						int pos = writeUniqueName(name, uniqueStrings, outStringsStream);
-					}
-				}
-				for (int i = 0; i < n.staticMethods.size(); i++) {
-					name = n.staticMethods.get(i).name;
-					if (!uniqueStrings.containsKey(name)) {
-						int pos = writeUniqueName(name, uniqueStrings, outStringsStream);
-					}
-				}
-				for (int i = 0; i < n.instanceFields.size(); i++) {
-					name = n.instanceFields.get(i).name;
-					if (!uniqueStrings.containsKey(name)) {
-						int pos = writeUniqueName(name, uniqueStrings, outStringsStream);
-					}
-				}
-				for (int i = 0; i < n.staticFields.size(); i++) {
-					name = n.staticFields.get(i).name;
-					if (!uniqueStrings.containsKey(name)) {
-						int pos = writeUniqueName(name, uniqueStrings, outStringsStream);
-					}
-				}
-			}
-
-			for (TreeNode child : n.children)
-				d.add(child);
-		}
-
-		outStringsStream.flush();
-		outStringsStream.close();
-
-		FileOutputStream outValueStream = new FileOutputStream("bin/treeValueStream.dat");
-		writeInt(0, outValueStream);
-
-		final int array_offset = 1000 * 1000 * 1000;
-
-		d.push(root);
-		while (!d.isEmpty()) {
-			TreeNode n = d.pollFirst();
-
-			if (n.nodeType == TreeNode.Package) {
-				n.offsetValue = 0;
-			} else if ((n.nodeType & TreeNode.Primitive) == TreeNode.Primitive) {
-				n.offsetValue = (int) outValueStream.getChannel().position();
-
-				outValueStream.write(n.nodeType);
-			} else if (((n.nodeType & TreeNode.Class) == TreeNode.Class)
-					|| ((n.nodeType & TreeNode.Interface) == TreeNode.Interface)) {
-				n.offsetValue = (int) outValueStream.getChannel().position();
-
-				outValueStream.write(n.nodeType);
-
-				//
-				writeTreeNodeId(n.baseClassNode, outValueStream);
-				//
-
-				if ((n.nodeType & TreeNode.Interface) == TreeNode.Interface) {
-					byte usePrefix = true ? 1 : 0;
-					outValueStream.write(usePrefix);
-					writeInt(commonInterfacePrefixPosition, outValueStream);
-				}
-
-				int len = writeLength(n.instanceMethods.size(), outValueStream);
-				for (int i = 0; i < len; i++) {
-					writeMethodInfo(n.instanceMethods.get(i), uniqueStrings, outValueStream);
-				}
-
-				len = writeLength(n.staticMethods.size(), outValueStream);
-				for (int i = 0; i < len; i++) {
-					MethodInfo mi = n.staticMethods.get(i);
-					writeMethodInfo(mi, uniqueStrings, outValueStream);
-					writeTreeNodeId(mi.declaringType, outValueStream);
-				}
-
-				len = writeLength(n.instanceFields.size(), outValueStream);
-				for (int i = 0; i < len; i++) {
-					FieldInfo fi = n.instanceFields.get(i);
-					int pos = uniqueStrings.get(fi.name).intValue();
-					writeInt(pos, outValueStream);
-					writeTreeNodeId(fi.valueType, outValueStream);
-				}
-
-				len = writeLength(n.staticFields.size(), outValueStream);
-				for (int i = 0; i < len; i++) {
-					FieldInfo fi = n.staticFields.get(i);
-					int pos = uniqueStrings.get(fi.name).intValue();
-					writeInt(pos, outValueStream);
-					writeTreeNodeId(fi.valueType, outValueStream);
-					writeTreeNodeId(fi.declaringType, outValueStream);
-				}
-			} else if ((n.nodeType & TreeNode.Array) == TreeNode.Array) {
-				n.offsetValue = array_offset;
-			} else {
-				throw new Exception("should not happen");
-			}
-
-			for (TreeNode child : n.children)
-				d.add(child);
-		}
-
-		outValueStream.flush();
-		outValueStream.close();
-
-		d.push(root);
-		while (!d.isEmpty()) {
-			TreeNode n = d.pollFirst();
-
-			if (n.arrayElement != null) {
-				n.offsetValue = array_offset + n.arrayElement.id;
-			}
-
-			if (!n.children.isEmpty())
-				n.firstChildId = n.children.get(0).id;
-
-			for (int i = 0; i < n.children.size(); i++) {
-				if (i > 0)
-					n.children.get(i - 1).nextSiblingId = n.children.get(i).id;
-
-				d.add(n.children.get(i));
-			}
-		}
-
-		FileOutputStream outNodeStream = new FileOutputStream("bin/treeNodeStream.dat");
-		int[] nodeData = new int[3];
-
-		ByteBuffer byteBuffer = ByteBuffer.allocate(nodeData.length * 4);
-		byteBuffer.order(ByteOrder.LITTLE_ENDIAN);
-		IntBuffer intBuffer = byteBuffer.asIntBuffer();
-
-		d.push(root);
-		while (!d.isEmpty()) {
-			TreeNode n = d.pollFirst();
-
-			nodeData[0] = n.firstChildId + (n.nextSiblingId << 16);
-			nodeData[1] = n.offsetName;
-			nodeData[2] = n.offsetValue;
-
-			intBuffer.clear();
-			intBuffer.put(nodeData);
-			outNodeStream.write(byteBuffer.array());
-
-			for (TreeNode child : n.children)
-				d.add(child);
-		}
-
-		outNodeStream.flush();
-		outNodeStream.close();
-	}
 }
