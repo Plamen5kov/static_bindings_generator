@@ -455,7 +455,7 @@ public class JarLister {
 			if (m.isSynthetic()) {
 				continue;
 			}
-			if(!overridenClasses.get(currentKey).contains(m.getName())) {
+			if(!overridenClasses.get(currentKey).contains(m.getName()) && !clazz.isInterface()) {
 				continue;
 			}
 
@@ -502,7 +502,12 @@ public class JarLister {
 				writeExceptionSignature(out, m);
 
 				if (clazz.isInterface()) {
-					writeInterfaceMethodImplementation(out, level, m, retType);
+					if(!overridenClasses.get(currentKey).contains(m.getName())){
+						writeThrowExceptionImplementation(out, level, m, retType);
+					}
+					else {
+						writeInterfaceMethodImplementation(out, level, m, retType);	
+					}
 				} else {
 					if (isAbstract && clazz.isInterface()) {
 						writeAbstractMethodImplementation(out, level, m, retType);
@@ -526,6 +531,22 @@ public class JarLister {
 		writeNativeScriptHashCodeProviderMethods(out, level, clazz, methodGroupIdx, methodGroups);
 
 		out.write(tabs + "}\n");
+	}
+	
+	private static void writeThrowExceptionImplementation(OutputStreamWriter out, int level, Method m, String retType)
+			throws Exception {
+
+
+		String className = m.getDeclaringClass().getName();
+		String methodName = m.getName();
+		String errorMessageString = "You haven't overriden " + methodName + " in class " + className;
+		
+		Class<?>[] paramTypes = m.getParameterTypes();
+		String tabs = getTabsForLevel(level);
+		
+		out.write(" {\n");
+		out.write(tabs + "\t\tthrow new UnsupportedOperationException(\"" + errorMessageString + "\");\n");
+		out.write(tabs + "\t}\n\n");
 	}
 
 	private static void writeNativeScriptHashCodeProviderMethods(OutputStreamWriter out, int level, Class<?> clazz,
