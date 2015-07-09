@@ -924,26 +924,6 @@ public class JarLister {
 		return wrapped;
 	}
 
-	public static void startGenerateMetadata(String[] args, String[] jars) throws Exception {
-		String[] outDirs = new String[jars.length];
-
-		for (int i = 0; i < jars.length; i++) {
-			String jar = jars[i];
-			String[] dirs = { "out/", jar + "/", "metadata/" };
-			String outputDir = "bin/";
-			for (String d : dirs) {
-				outputDir += d;
-				File fd = new File(outputDir);
-				if (!fd.exists()) {
-					fd.mkdir();
-				}
-			}
-			outDirs[i] = outputDir;
-		}
-
-		start(args, jars, outDirs, true /* metadata */);
-	}
-
 	public static void startGenerateBindings(String[] args, HashMap<String, HashSet<String>> proxyNames)
 			throws Exception {
 		overridenClasses = proxyNames;
@@ -968,10 +948,10 @@ public class JarLister {
 			outDirs[i] = outputDir;
 		}
 
-		start(args, jars, outDirs, false /* metadata */);
+		start(args, jars, outDirs);
 	}
 
-	private static void start(String[] args, String[] jars, String[] outDirs, boolean generateMetadata)
+	private static void start(String[] args, String[] jars, String[] outDirs)
 			throws Exception {
 
 		for (int i = 0; i < jars.length; i++) {
