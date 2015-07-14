@@ -516,7 +516,8 @@ public class JarLister {
 						if(!overridenClasses.get(currentKey).contains(m.getName())) {
 							writeThrowExceptionImplementation(out, level, m, retType);	
 						} else {
-							writeAbstractMethodImplementation(out, level, m, retType);	
+							writeMethodBody(out, level, clazz, m, retType, methodGroupIdx);
+//							writeAbstractMethodImplementation(out, level, m, retType);	
 						}
 					} else {
 						writeMethodBody(out, level, clazz, m, retType, methodGroupIdx);
