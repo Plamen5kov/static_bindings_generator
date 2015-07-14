@@ -63,6 +63,10 @@ public class JarLister {
 		if (!Modifier.isPublic(clazzModifiers)) {
 			return;
 		}
+		
+		if (Modifier.isStatic(clazzModifiers) && !clazz.isInterface()) {
+			return;
+		}
 
 		boolean isFinalClass = Modifier.isFinal(clazzModifiers);
 
@@ -126,7 +130,7 @@ public class JarLister {
 
 				out.write("package " + packagePrefix + classPackage.getName() + ";\n\n");
 
-				boolean hasInitOverride = ((HashSet<String>)overridenClasses.get(key)).contains("init");
+				boolean hasInitOverride = ((HashSet<String>) overridenClasses.get(key)).contains("init");
 				generateJavaBindingsRec(clazz, out, 0, key, hasInitOverride);
 
 				out.flush();
@@ -137,7 +141,7 @@ public class JarLister {
 
 	private static String getLocationOfClass(String key) {
 		String extendLocation = null;
-		
+
 		int indexOfFileSeparator = key.indexOf(LOCATION_SEPARATOR);
 		extendLocation = key.substring(indexOfFileSeparator);
 
@@ -412,8 +416,8 @@ public class JarLister {
 						out.write(tabs + "public static class " + fullClassName + " extends "
 								+ clazz.getCanonicalName() + " implements com.tns.NativeScriptHashCodeProvider {\n");
 					} else {
-						out.write(tabs + "public class " + fullClassName + " extends "
-								+ clazz.getCanonicalName() + " implements com.tns.NativeScriptHashCodeProvider {\n");
+						out.write(tabs + "public class " + fullClassName + " extends " + clazz.getCanonicalName()
+								+ " implements com.tns.NativeScriptHashCodeProvider {\n");
 					}
 					hasPublicCtors = true;
 
@@ -455,7 +459,7 @@ public class JarLister {
 			if (m.isSynthetic()) {
 				continue;
 			}
-			if(!overridenClasses.get(currentKey).contains(m.getName()) && !clazz.isInterface()) {
+			if (!overridenClasses.get(currentKey).contains(m.getName()) && !clazz.isInterface()) {
 				continue;
 			}
 
@@ -502,11 +506,10 @@ public class JarLister {
 				writeExceptionSignature(out, m);
 
 				if (clazz.isInterface()) {
-					if(!overridenClasses.get(currentKey).contains(m.getName())){
+					if (!overridenClasses.get(currentKey).contains(m.getName())) {
 						writeThrowExceptionImplementation(out, level, m, retType);
-					}
-					else {
-						writeInterfaceMethodImplementation(out, level, m, retType);	
+					} else {
+						writeInterfaceMethodImplementation(out, level, m, retType);
 					}
 				} else {
 					if (isAbstract && clazz.isInterface()) {
@@ -532,18 +535,17 @@ public class JarLister {
 
 		out.write(tabs + "}\n");
 	}
-	
+
 	private static void writeThrowExceptionImplementation(OutputStreamWriter out, int level, Method m, String retType)
 			throws Exception {
-
 
 		String className = m.getDeclaringClass().getName();
 		String methodName = m.getName();
 		String errorMessageString = "You haven't overriden " + methodName + " in class " + className;
-		
+
 		Class<?>[] paramTypes = m.getParameterTypes();
 		String tabs = getTabsForLevel(level);
-		
+
 		out.write(" {\n");
 		out.write(tabs + "\t\tthrow new UnsupportedOperationException(\"" + errorMessageString + "\");\n");
 		out.write(tabs + "\t}\n\n");
@@ -951,8 +953,7 @@ public class JarLister {
 		start(args, jars, outDirs);
 	}
 
-	private static void start(String[] args, String[] jars, String[] outDirs)
-			throws Exception {
+	private static void start(String[] args, String[] jars, String[] outDirs) throws Exception {
 
 		for (int i = 0; i < jars.length; i++) {
 			String jarFile = jars[i];
@@ -960,46 +961,47 @@ public class JarLister {
 
 			JarInputStream input = null;
 
-			try {
-				String jarFilename = new File(ExtendClassGenerator.jarFilesDir, jarFile).getCanonicalPath();
-				input = new JarInputStream(new FileInputStream(jarFilename));
+			String jarFilename = new File(ExtendClassGenerator.jarFilesDir, jarFile).getCanonicalPath();
+			input = new JarInputStream(new FileInputStream(jarFilename));
 
-				JarEntry entry = input.getNextJarEntry();
-				ArrayList<String> classes = new ArrayList<String>();
-				while (entry != null) {
-					try {
-						String name = entry.getName();
+			JarEntry entry = input.getNextJarEntry();
+			ArrayList<String> classes = new ArrayList<String>();
+			while (entry != null) {
+				try {
+					String name = entry.getName();
 
-						if (!name.endsWith(".class"))
-							continue;
-
-						name = name.substring(0, name.length() - 6).replace('/', '.');
-						classes.add(name);
-					} finally {
-						entry = input.getNextJarEntry();
-					}
-				}
-
-				//
-				Collections.sort(classes);
-				//
-
-				for (String className : classes) {
-					//
-					if (jarFile.equals("nativescript.jar") && className.startsWith("com.tns.com.tns.tests.")) {
+					if (!name.endsWith(".class"))
 						continue;
-					}
-					//
 
-					Class<?> clazz = Class.forName(className, false, loader);
-
-					generateJavaBindings(clazz, outDir);
+					name = name.substring(0, name.length() - 6).replace('/', '.');
+					classes.add(name);
+				} finally {
+					entry = input.getNextJarEntry();
 				}
-			} catch (NoClassDefFoundError e) {
-				System.out.println("No deffinition could be found for: " + e.getMessage());
-			} finally {
-				if (input != null) {
-					input.close();
+			}
+
+			//
+			Collections.sort(classes);
+			//
+
+			for (String className : classes) {
+
+				//
+				if (jarFile.equals("nativescript.jar") && className.startsWith("com.tns.com.tns.tests.")) {
+					continue;
+				}
+				//
+
+				try {
+					Class<?> clazz = Class.forName(className, false, loader);
+					generateJavaBindings(clazz, outDir);
+				} catch (NoClassDefFoundError e) {
+					System.out.println("No deffinition could be found for: " + e.getMessage());
+					continue;
+				} finally {
+					if (input != null) {
+						input.close();
+					}
 				}
 			}
 		}
