@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 observable.Observable_frnal_prepareExtend_l60_c37__AppViewModel 
 observable.Observable_frnal_prepareExtend_l60_c37__RedditViewModel 
 observable.Observable_frnal_prepareExtend_l60_c37__AndroidApplication getActivity,init,activityCreatedEvent,activityDestroyedEvent,activityStartedEvent,activityPausedEvent,activityResumedEvent,activityStoppedEvent,saveActivityStateEvent,activityResultEvent,activityBackPressedEvent
@@ -135,6 +136,8 @@ layouts.Layout_frnal_prepareExtend_l60_c37__WrapLayout getChildMeasureSpec,onMea
 bindable.Bindable_frnal_prepareExtend_l60_c37__ItemSpec equals
 layouts.Layout_frnal_prepareExtend_l60_c37__GridLayout getColumn,setColumn,getColumnSpan,setColumnSpan,getRow,setRow,getRowSpan,setRowSpan,attachedPropertyChanged,validateItemSpec,addRow,addColumn,removeColumn,removeRow,getColumns,getRows,setColumns,setRows,invalidate,getColumn,getRow,getColumnSpan,getRowSpan,onMeasure,onLayout,_applyXmlAttribute,parseItemSpecs,convertGridLength,columnProperty,columnSpanProperty,rowProperty,rowSpanProperty
 =======
+=======
+>>>>>>> 2a46b02d5f64eba108f33f9390214ab103291930
 android.view.View.OnClickListener_fmainpage_l44_c32__AppClickListener onClick
 java.lang.Runnable_fInfrastructure_timers_l12_c20__ run
 java.lang.Runnable_fInfrastructure_timers_l38_c20__ run
@@ -204,4 +207,7 @@ android.view.View.OnClickListener_ftests_testsForTypescript_l514_c38__ onClick
 android.widget.Button_ftests_testsWithContext_l21_c41__ init
 android.content.DialogInterface.OnClickListener_ftests_testsWithContext_l102_c53__ onClick
 android.widget.DatePicker_ftests_testsWithContext_l40_c49__ init
+<<<<<<< HEAD
 >>>>>>> has separate bindings for each needing js instance
+=======
+>>>>>>> 2a46b02d5f64eba108f33f9390214ab103291930
