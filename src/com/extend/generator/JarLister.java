@@ -458,15 +458,16 @@ public class JarLister {
 			if (m.isSynthetic()) {
 				continue;
 			}
-			if (!overridenClasses.get(currentKey).contains(m.getName()) && !clazz.isInterface()) {
-				continue;
-			}
 
 			int modifiers = m.getModifiers();
 
 			boolean isFinal = Modifier.isFinal(modifiers);
 			boolean isStatic = Modifier.isStatic(modifiers);
 			boolean isAbstract = Modifier.isAbstract(modifiers);
+						
+			if (!overridenClasses.get(currentKey).contains(m.getName()) && !clazz.isInterface() && !isAbstract) {
+				continue;
+			}
 
 			if (!isFinal && !isStatic) {
 				//
@@ -511,8 +512,12 @@ public class JarLister {
 						writeInterfaceMethodImplementation(out, level, m, retType);
 					}
 				} else {
-					if (isAbstract && clazz.isInterface()) {
-						writeAbstractMethodImplementation(out, level, m, retType);
+					if (isAbstract) {	
+						if(!overridenClasses.get(currentKey).contains(m.getName())) {
+							writeThrowExceptionImplementation(out, level, m, retType);	
+						} else {
+							writeAbstractMethodImplementation(out, level, m, retType);	
+						}
 					} else {
 						writeMethodBody(out, level, clazz, m, retType, methodGroupIdx);
 					}
