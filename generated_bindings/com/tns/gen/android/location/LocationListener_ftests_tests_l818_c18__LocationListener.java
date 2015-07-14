@@ -20,11 +20,7 @@ public class LocationListener_ftests_tests_l818_c18__LocationListener implements
 	}
 
 	public void onStatusChanged(java.lang.String param_0, int param_1, android.os.Bundle param_2) {
-		java.lang.Object[] params = new Object[3];
-		params[0] = param_0;
-		params[1] = param_1;
-		params[2] = param_2;
-		com.tns.Platform.callJSMethod(this, "onStatusChanged", params);
+		throw new UnsupportedOperationException("You haven't overriden onStatusChanged in class android.location.LocationListener");
 	}
 
 	public boolean equals__super(java.lang.Object other) {
