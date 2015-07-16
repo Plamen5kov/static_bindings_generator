@@ -2,6 +2,7 @@ package com.extend.generator;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -401,10 +402,10 @@ public class JarLister {
 						+ ", com.tns.NativeScriptHashCodeProvider {\n");
 			}
 
-			for (Class<?> nested : clazz.getDeclaredClasses()) {
-
-				generateJavaBindingsRec(nested, out, level + 1, currentKey, hasInitOverride);
-			}
+//			for (Class<?> nested : clazz.getDeclaredClasses()) {
+//
+//				generateJavaBindingsRec(nested, out, level + 1, currentKey, hasInitOverride);
+//			}
 		} else {
 			for (Constructor<?> c : clazz.getConstructors()) {
 				if (c.isSynthetic()) {
@@ -967,7 +968,13 @@ public class JarLister {
 			JarInputStream input = null;
 
 			String jarFilename = new File(ExtendClassGenerator.jarFilesDir, jarFile).getCanonicalPath();
-			input = new JarInputStream(new FileInputStream(jarFilename));
+			try {
+				input = new JarInputStream(new FileInputStream(jarFilename));	
+			}
+			catch(FileNotFoundException e) {
+				System.out.println("The jar could not be found: " + e.getMessage());
+				continue;
+			}
 
 			JarEntry entry = input.getNextJarEntry();
 			ArrayList<String> classes = new ArrayList<String>();
@@ -982,7 +989,7 @@ public class JarLister {
 					classes.add(name);
 				} finally {
 					entry = input.getNextJarEntry();
-				}
+				}				
 			}
 
 			//
