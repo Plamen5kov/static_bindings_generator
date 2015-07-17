@@ -674,9 +674,9 @@ public class JarLister {
 			out.write("return (" + wrappedRetType + ")");
 		}
 		if (m.getName().equals("init")) {
-			out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", false, params);\n");
+			out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", " + retType + ".class, false, params);\n");
 		} else {
-			out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", params);\n");
+			out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", " + retType + ".class, params);\n");
 		}
 
 		out.write(tabs + "\t}\n\n");
@@ -754,7 +754,7 @@ public class JarLister {
 					out.write(tabs + "\t\t\tparams[" + i + "] = param_" + i + ";\n");
 				}
 			}
-			out.write(tabs + "\t\tcom.tns.Platform.callJSMethod(this, \"init\", true, params);\n");
+			out.write(tabs + "\t\tcom.tns.Platform.callJSMethod(this, \"init\", void.class, true, params);\n");
 		}
 		out.write(tabs + "\t}\n\n");
 
@@ -821,7 +821,7 @@ public class JarLister {
 			String wrappedRetType = wrapPrimitiveType(retType);
 			out.write("return (" + wrappedRetType + ")");
 		}
-		out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", params);\n");
+		out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", " + retType + ".class, params);\n");
 
 		out.write(tabs + "\t}\n\n");
 	}
@@ -847,7 +847,7 @@ public class JarLister {
 			String wrappedRetType = wrapPrimitiveType(retType);
 			out.write("return (" + wrappedRetType + ")");
 		}
-		out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", params);\n");
+		out.write(bridge + "callJSMethod(this, \"" + m.getName() + "\", " + retType + ".class, params);\n");
 
 		out.write(tabs + "\t}\n\n");
 	}
