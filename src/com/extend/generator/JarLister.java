@@ -513,7 +513,7 @@ public class JarLister {
 						writeInterfaceMethodImplementation(out, level, m, retType);
 					}
 				} else {
-					if (isAbstract) {	
+					if (isAbstract || m.getName().equals("init")) {	
 						if(!overridenClasses.get(currentKey).contains(m.getName())) {
 							writeThrowExceptionImplementation(out, level, m, retType);	
 						} else {
