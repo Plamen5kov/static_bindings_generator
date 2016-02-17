@@ -1,4 +1,1 @@
-/jars
-/bin
-/generated_bindings
-bindings.txt
+node_modules
